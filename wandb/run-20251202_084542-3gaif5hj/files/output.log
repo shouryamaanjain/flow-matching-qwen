@@ -1,0 +1,13 @@
+12/02/2025 08:45:43 - INFO - training.fm_trainer - Starting training
+12/02/2025 08:45:43 - INFO - training.fm_trainer -   Max steps: 210000
+12/02/2025 08:45:43 - INFO - training.fm_trainer -   Global batch size: 128
+12/02/2025 08:45:43 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/02/2025 08:45:43 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 08:45:43 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 67762.86it/s]
+12/02/2025 08:52:42 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 08:52:42 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math

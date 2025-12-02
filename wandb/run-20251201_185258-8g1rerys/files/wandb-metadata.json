@@ -1,0 +1,69 @@
+{
+  "os": "Linux-6.8.0-56-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.12.3",
+  "startedAt": "2025-12-01T18:52:58.571188Z",
+  "args": [
+    "--config",
+    "training/configs/pretrain_h100x4.yaml",
+    "--output_dir",
+    "./checkpoints/flow_matching_qwen_1.7b",
+    "--max_steps",
+    "1"
+  ],
+  "program": "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py",
+  "codePath": "flow-matching-qwen/training/train_h100.py",
+  "codePathLocal": "training/train_h100.py",
+  "git": {
+    "remote": "https://github.com/SalesforceAIResearch/CoDA.git",
+    "commit": "2c8c626afd560659c21213cb02939d417bb76c71"
+  },
+  "email": "jainshouryamaan@gmail.com",
+  "root": "/workspace/flow-matching/CoDA/flow-matching-qwen",
+  "host": "caa7518db9d6",
+  "executable": "/usr/bin/python3.12",
+  "cpu_count": 80,
+  "cpu_count_logical": 160,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "161061273600",
+      "used": "10101370880"
+    }
+  },
+  "memory": {
+    "total": "1623318458368"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-61b1e25a-fb66-0680-7720-ab2b36eb997b"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-f7945581-07e2-9f63-24a8-ee582e7ef24c"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-7b5ae675-c64f-24c1-61b0-006e31f276a0"
+    },
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-7f5124ef-0754-cf8e-4239-36525846dd6f"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "rpst175xab7mo0nj5y7wb88tbw2wdjfb"
+}

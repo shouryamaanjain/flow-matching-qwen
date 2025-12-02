@@ -1,0 +1,26 @@
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_setup.py:_flush():80] Current SDK version is 0.23.0
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_setup.py:_flush():80] Configure stats pid to 98538
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_setup.py:_flush():80] Loading settings from /root/.config/wandb/settings
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_setup.py:_flush():80] Loading settings from /workspace/flow-matching/CoDA/flow-matching-qwen/wandb/settings
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_init.py:setup_run_log_directory():713] Logging user logs to /workspace/flow-matching/CoDA/flow-matching-qwen/wandb/run-20251201_193914-6vxij2lt/logs/debug.log
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_init.py:setup_run_log_directory():714] Logging internal logs to /workspace/flow-matching/CoDA/flow-matching-qwen/wandb/run-20251201_193914-6vxij2lt/logs/debug-internal.log
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_init.py:init():840] calling init triggers
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_init.py:init():845] wandb.init called with sweep_config: {}
+config: {'model': 'Qwen/Qwen3-1.7B', 'max_steps': 1, 'global_batch_size': 128, 'learning_rate': 0.0003, 'scheduler_type': 'polynomial_convex', 'scheduler_n': 1.0, 'sequence_length': 8192, '_wandb': {}}
+2025-12-01 19:39:14,514 INFO    MainThread:98538 [wandb_init.py:init():888] starting backend
+2025-12-01 19:39:14,768 INFO    MainThread:98538 [wandb_init.py:init():891] sending inform_init request
+2025-12-01 19:39:14,771 INFO    MainThread:98538 [wandb_init.py:init():899] backend started and connected
+2025-12-01 19:39:14,772 INFO    MainThread:98538 [wandb_init.py:init():969] updated telemetry
+2025-12-01 19:39:14,776 INFO    MainThread:98538 [wandb_init.py:init():993] communicating run to backend with 90.0 second timeout
+2025-12-01 19:39:15,620 INFO    MainThread:98538 [wandb_init.py:init():1040] starting run threads in backend
+2025-12-01 19:39:15,694 INFO    MainThread:98538 [wandb_run.py:_console_start():2504] atexit reg
+2025-12-01 19:39:15,694 INFO    MainThread:98538 [wandb_run.py:_redirect():2352] redirect: wrap_raw
+2025-12-01 19:39:15,694 INFO    MainThread:98538 [wandb_run.py:_redirect():2421] Wrapping output streams.
+2025-12-01 19:39:15,695 INFO    MainThread:98538 [wandb_run.py:_redirect():2444] Redirects installed.
+2025-12-01 19:39:15,696 INFO    MainThread:98538 [wandb_init.py:init():1080] run started, returning control to user process
+2025-12-01 19:40:37,268 INFO    MainThread:98538 [wandb_run.py:_finish():2270] finishing run emplode/flow-matching-lm/6vxij2lt
+2025-12-01 19:40:37,268 INFO    MainThread:98538 [wandb_run.py:_atexit_cleanup():2469] got exitcode: 0
+2025-12-01 19:40:37,268 INFO    MainThread:98538 [wandb_run.py:_restore():2451] restore
+2025-12-01 19:40:37,268 INFO    MainThread:98538 [wandb_run.py:_restore():2457] restore done
+2025-12-01 19:40:38,684 INFO    MainThread:98538 [wandb_run.py:_footer_sync_info():3853] logging synced files

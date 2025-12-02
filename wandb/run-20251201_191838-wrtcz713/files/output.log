@@ -1,0 +1,20 @@
+12/01/2025 19:18:39 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:18:39 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 19:18:39 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:18:39 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 19:18:39 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:18:39 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+12/01/2025 19:19:01 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:19:01 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+12/01/2025 19:19:05 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:19:05 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+12/01/2025 19:19:08 - INFO - data.data_loader - ✓ Loaded redpajama-arxiv with weight 9.18
+12/01/2025 19:19:08 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+12/01/2025 19:19:13 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:19:13 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+12/01/2025 19:19:15 - INFO - data.data_loader - ✓ Loaded deepmind-math with weight 3.24
+12/01/2025 19:19:15 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup

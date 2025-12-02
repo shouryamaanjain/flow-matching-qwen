@@ -1,0 +1,11 @@
+{"time":"2025-12-01T18:49:50.97756132Z","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-12-01T18:49:51.408514136Z","level":"INFO","msg":"stream: created new stream","id":"jiappm50"}
+{"time":"2025-12-01T18:49:51.408734216Z","level":"INFO","msg":"handler: started","stream_id":"jiappm50"}
+{"time":"2025-12-01T18:49:51.408841831Z","level":"INFO","msg":"stream: started","id":"jiappm50"}
+{"time":"2025-12-01T18:49:51.408870897Z","level":"INFO","msg":"writer: started","stream_id":"jiappm50"}
+{"time":"2025-12-01T18:49:51.408870681Z","level":"INFO","msg":"sender: started","stream_id":"jiappm50"}
+{"time":"2025-12-01T18:51:03.981690864Z","level":"INFO","msg":"stream: closing","id":"jiappm50"}
+{"time":"2025-12-01T18:51:04.614779537Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-01T18:51:05.061762713Z","level":"INFO","msg":"handler: closed","stream_id":"jiappm50"}
+{"time":"2025-12-01T18:51:05.061866649Z","level":"INFO","msg":"sender: closed","stream_id":"jiappm50"}
+{"time":"2025-12-01T18:51:05.061874009Z","level":"INFO","msg":"stream: closed","id":"jiappm50"}

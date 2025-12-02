@@ -1,0 +1,132 @@
+12/01/2025 19:16:26 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:16:26 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 19:16:26 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:16:26 - INFO - training.fm_trainer -   Gradient accumulation steps: 16
+12/01/2025 19:16:26 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:16:26 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Downloading readme: 7.46kB [00:00, 16.5MB/s]
+12/01/2025 19:16:47 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:16:47 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+12/01/2025 19:16:50 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:16:50 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+12/01/2025 19:16:53 - INFO - data.data_loader - ✓ Loaded redpajama-arxiv with weight 9.18
+12/01/2025 19:16:53 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+12/01/2025 19:16:58 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:16:58 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+12/01/2025 19:17:00 - INFO - data.data_loader - ✓ Loaded deepmind-math with weight 3.24
+12/01/2025 19:17:00 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+12/01/2025 19:17:04 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:17:04 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+12/01/2025 19:17:07 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:17:07 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+12/01/2025 19:17:10 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:17:10 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+12/01/2025 19:17:12 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 19:17:12 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/01/2025 19:17:12 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'redpajama-arxiv': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'deepmind-math': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+    main()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+    trainer.train()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+    loss = self.train_step(batch)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+    logits, loss = self.model(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1648, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1474, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 523, in forward
+    logits = self.lm_head(hidden_states)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 6.50 MiB is free. Including non-PyTorch memory, this process has 79.17 GiB memory in use. Of the allocated memory 77.50 GiB is allocated by PyTorch, and 141.87 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+[rank0]:     main()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+[rank0]:     loss = self.train_step(batch)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+[rank0]:     logits, loss = self.model(
+[rank0]:                    ^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1648, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1474, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 819, in forward
+[rank0]:     return model_forward(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 807, in __call__
+[rank0]:     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[rank0]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 523, in forward
+[rank0]:     logits = self.lm_head(hidden_states)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py", line 125, in forward
+[rank0]:     return F.linear(input, self.weight, self.bias)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU 0 has a total capacity of 79.19 GiB of which 6.50 MiB is free. Including non-PyTorch memory, this process has 79.17 GiB memory in use. Of the allocated memory 77.50 GiB is allocated by PyTorch, and 141.87 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

@@ -1,0 +1,187 @@
+12/01/2025 18:52:59 - INFO - training.fm_trainer - Starting training
+12/01/2025 18:52:59 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 18:52:59 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 18:52:59 - INFO - training.fm_trainer -   Gradient accumulation steps: 4
+12/01/2025 18:52:59 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 18:52:59 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+12/01/2025 18:53:19 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 18:53:19 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+12/01/2025 18:53:22 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 18:53:22 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+12/01/2025 18:53:25 - INFO - data.data_loader - ✓ Loaded redpajama-arxiv with weight 9.18
+12/01/2025 18:53:25 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Downloading readme: 131kB [00:00, 26.6MB/s]
+12/01/2025 18:53:30 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 18:53:30 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+12/01/2025 18:53:33 - INFO - data.data_loader - ✓ Loaded deepmind-math with weight 3.24
+12/01/2025 18:53:33 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+12/01/2025 18:53:38 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 18:53:38 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+12/01/2025 18:53:41 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 18:53:41 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+12/01/2025 18:53:43 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 18:53:43 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+12/01/2025 18:53:56 - WARNING - data.data_loader - Failed to load dataset stack-v1-cpp: The directory at hf://datasets/bigcode/the-stack-dedup@17cad72c886a2858e08d4c349a00d6466f54df63/data/c%2B%2B doesn't contain any data files
+12/01/2025 18:53:56 - WARNING - data.data_loader - ✗ Skipped stack-v1-cpp
+12/01/2025 18:53:56 - INFO - data.data_loader - Creating mixture with 8 datasets
+12/01/2025 18:53:56 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3404628529395123, 'openwebmath': 0.07344536864143043, 'redpajama-arxiv': 0.051943642845017825, 'wikipedia-en': 0.030611667515419005, 'deepmind-math': 0.018333050415888646, 'stack-v1-python': 0.28716120635998416, 'stack-v1-javascript': 0.11316697787585583, 'stack-v1-java': 0.08487523340689188}
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+    main()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+    trainer.train()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+    loss = self.train_step(batch)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+    logits, loss = self.model(
+                   ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1648, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1474, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+    hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+    hidden_states = self.layers(
+                    ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+    input = module(*splat(input), **broadcasted_inputs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 249, in forward
+    hidden_states = self.self_attn(
+                    ^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 169, in forward
+    attn_output = F.scaled_dot_product_attention(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected attn_mask dtype to be bool or float or to match query dtype, but got attn_mask.dtype: long int and  query.dtype: c10::BFloat16 instead.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+[rank0]:     main()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+[rank0]:     loss = self.train_step(batch)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+[rank0]:     logits, loss = self.model(
+[rank0]:                    ^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1648, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/parallel/distributed.py", line 1474, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 819, in forward
+[rank0]:     return model_forward(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/utils/operations.py", line 807, in __call__
+[rank0]:     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[rank0]:                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+[rank0]:     return func(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+[rank0]:     hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+[rank0]:     hidden_states = self.layers(
+[rank0]:                     ^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+[rank0]:     input = module(*splat(input), **broadcasted_inputs)
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 249, in forward
+[rank0]:     hidden_states = self.self_attn(
+[rank0]:                     ^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 169, in forward
+[rank0]:     attn_output = F.scaled_dot_product_attention(
+[rank0]:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: RuntimeError: Expected attn_mask dtype to be bool or float or to match query dtype, but got attn_mask.dtype: long int and  query.dtype: c10::BFloat16 instead.

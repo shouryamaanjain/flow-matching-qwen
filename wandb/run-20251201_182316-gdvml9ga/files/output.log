@@ -1,0 +1,133 @@
+12/01/2025 18:23:17 - INFO - training.fm_trainer - Starting training
+12/01/2025 18:23:17 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 18:23:17 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 18:23:17 - INFO - training.fm_trainer -   Gradient accumulation steps: 4
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 317, in train
+    batch = next(train_iterator)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+    next_batch, next_batch_info = self._fetch_batches(main_iterator)
+                                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+    batches.append(next(iterator))
+                   ~~~~^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+    data = self._next_data()
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1506, in _next_data
+    return self._process_data(data, worker_id)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1541, in _process_data
+    data.reraise()
+    ~~~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/_utils.py", line 769, in reraise
+    raise exception
+ValueError: Caught ValueError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+    data.append(next(self.dataset_iter))
+                ~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 361, in __iter__
+    dataset = self._get_dataset()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 309, in _get_dataset
+    self._dataset = create_pretrain_mixture(
+                    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self.tokenizer,
+        ^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        self.seed + self.worker_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 265, in create_pretrain_mixture
+    mixed_dataset = interleave_datasets(
+        loaded_datasets,
+    ...<2 lines>...
+        stopping_strategy="all_exhausted",  # Continue until all datasets are exhausted
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/combine.py", line 156, in interleave_datasets
+    return _interleave_iterable_datasets(
+        datasets,
+    ...<4 lines>...
+        stopping_strategy=stopping_strategy,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/iterable_dataset.py", line 4628, in _interleave_iterable_datasets
+    _check_if_features_can_be_aligned([dset.features for dset in datasets])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/features/features.py", line 2314, in _check_if_features_can_be_aligned
+    raise ValueError(
+        f'The features can\'t be aligned because the key {k} of features {features} has unexpected type - {v} (expected either {name2feature[k]} or Value("null").'
+    )
+ValueError: The features can't be aligned because the key metadata of features {'url': Value('string'), 'text': Value('string'), 'date': Value('string'), 'metadata': Value('string')} has unexpected type - Value('string') (expected either {'Content-Length': Value('string'), 'Content-Type': Value('string'), 'WARC-Block-Digest': Value('string'), 'WARC-Concurrent-To': Value('string'), 'WARC-Date': Value('timestamp[s]'), 'WARC-IP-Address': Value('string'), 'WARC-Identified-Payload-Type': Value('string'), 'WARC-Payload-Digest': Value('string'), 'WARC-Record-ID': Value('string'), 'WARC-Target-URI': Value('string'), 'WARC-Type': Value('string'), 'WARC-Warcinfo-ID': Value('string'), 'WARC-Truncated': Value('string')} or Value("null").
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 317, in train
+[rank0]:     batch = next(train_iterator)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+[rank0]:     next_batch, next_batch_info = self._fetch_batches(main_iterator)
+[rank0]:                                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+[rank0]:     batches.append(next(iterator))
+[rank0]:                    ~~~~^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1506, in _next_data
+[rank0]:     return self._process_data(data, worker_id)
+[rank0]:            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1541, in _process_data
+[rank0]:     data.reraise()
+[rank0]:     ~~~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/_utils.py", line 769, in reraise
+[rank0]:     raise exception
+[rank0]: ValueError: Caught ValueError in DataLoader worker process 0.
+[rank0]: Original Traceback (most recent call last):
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/worker.py", line 349, in _worker_loop
+[rank0]:     data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ~~~~^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 361, in __iter__
+[rank0]:     dataset = self._get_dataset()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 309, in _get_dataset
+[rank0]:     self._dataset = create_pretrain_mixture(
+[rank0]:                     ~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         self.tokenizer,
+[rank0]:         ^^^^^^^^^^^^^^^
+[rank0]:     ...<3 lines>...
+[rank0]:         self.seed + self.worker_id,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 265, in create_pretrain_mixture
+[rank0]:     mixed_dataset = interleave_datasets(
+[rank0]:         loaded_datasets,
+[rank0]:     ...<2 lines>...
+[rank0]:         stopping_strategy="all_exhausted",  # Continue until all datasets are exhausted
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/combine.py", line 156, in interleave_datasets
+[rank0]:     return _interleave_iterable_datasets(
+[rank0]:         datasets,
+[rank0]:     ...<4 lines>...
+[rank0]:         stopping_strategy=stopping_strategy,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/iterable_dataset.py", line 4628, in _interleave_iterable_datasets
+[rank0]:     _check_if_features_can_be_aligned([dset.features for dset in datasets])
+[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/features/features.py", line 2314, in _check_if_features_can_be_aligned
+[rank0]:     raise ValueError(
+[rank0]:         f'The features can\'t be aligned because the key {k} of features {features} has unexpected type - {v} (expected either {name2feature[k]} or Value("null").'
+[rank0]:     )
+[rank0]: ValueError: The features can't be aligned because the key metadata of features {'url': Value('string'), 'text': Value('string'), 'date': Value('string'), 'metadata': Value('string')} has unexpected type - Value('string') (expected either {'Content-Length': Value('string'), 'Content-Type': Value('string'), 'WARC-Block-Digest': Value('string'), 'WARC-Concurrent-To': Value('string'), 'WARC-Date': Value('timestamp[s]'), 'WARC-IP-Address': Value('string'), 'WARC-Identified-Payload-Type': Value('string'), 'WARC-Payload-Digest': Value('string'), 'WARC-Record-ID': Value('string'), 'WARC-Target-URI': Value('string'), 'WARC-Type': Value('string'), 'WARC-Warcinfo-ID': Value('string'), 'WARC-Truncated': Value('string')} or Value("null").

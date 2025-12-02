@@ -1,12 +1,6 @@
 # Checkpoints and model weights
 checkpoints/
 
-# Weights & Biases logs
-wandb/
-
-# Tokenizer cache
-tokenizer_cache/
-
 # Python cache
 __pycache__/
 *.py[cod]

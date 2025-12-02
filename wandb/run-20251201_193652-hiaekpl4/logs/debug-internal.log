@@ -1,0 +1,6 @@
+{"time":"2025-12-01T19:36:53.101298222Z","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-12-01T19:36:53.542741684Z","level":"INFO","msg":"stream: created new stream","id":"hiaekpl4"}
+{"time":"2025-12-01T19:36:53.542803698Z","level":"INFO","msg":"handler: started","stream_id":"hiaekpl4"}
+{"time":"2025-12-01T19:36:53.542897446Z","level":"INFO","msg":"stream: started","id":"hiaekpl4"}
+{"time":"2025-12-01T19:36:53.542926924Z","level":"INFO","msg":"sender: started","stream_id":"hiaekpl4"}
+{"time":"2025-12-01T19:36:53.542934656Z","level":"INFO","msg":"writer: started","stream_id":"hiaekpl4"}

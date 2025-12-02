@@ -1,0 +1,39 @@
+12/01/2025 19:33:38 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:33:38 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 19:33:38 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:33:38 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 19:33:38 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:33:38 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+12/01/2025 19:34:01 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:34:01 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Downloading readme: 4.80kB [00:00, 9.02MB/s]
+12/01/2025 19:34:06 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:34:06 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+Downloading readme: 3.96kB [00:00, 8.63MB/s]
+12/01/2025 19:34:09 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/01/2025 19:34:09 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+12/01/2025 19:34:13 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:34:13 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+12/01/2025 19:34:17 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/01/2025 19:34:17 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+12/01/2025 19:34:20 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:34:20 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+12/01/2025 19:34:23 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:34:23 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+12/01/2025 19:34:26 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:34:26 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+12/01/2025 19:34:29 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 19:34:29 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/01/2025 19:34:29 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/01/2025 19:34:45 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1
+12/01/2025 19:35:02 - INFO - accelerate.checkpointing - Model weights saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/model.safetensors
+12/01/2025 19:35:02 - INFO - accelerate.checkpointing - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/optimizer.bin
+12/01/2025 19:35:02 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/scheduler.bin
+12/01/2025 19:35:02 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/sampler.bin
+12/01/2025 19:35:02 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/random_states_0.pkl
+12/01/2025 19:35:02 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-1
+12/01/2025 19:35:02 - INFO - training.fm_trainer - Training complete!

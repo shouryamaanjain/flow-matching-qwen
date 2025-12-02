@@ -1,0 +1,292 @@
+12/02/2025 09:03:29 - INFO - training.fm_trainer - Starting training
+12/02/2025 09:03:29 - INFO - training.fm_trainer -   Max steps: 210000
+12/02/2025 09:03:29 - INFO - training.fm_trainer -   Global batch size: 128
+12/02/2025 09:03:29 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/02/2025 09:03:29 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 09:03:29 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|██████████████████████████████████| 27838/27838 [00:00<00:00, 68372.99it/s]
+12/02/2025 09:03:47 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 09:03:47 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|██████████████████████████████████████| 114/114 [00:00<00:00, 63847.06it/s]
+12/02/2025 09:03:49 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/02/2025 09:03:49 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/02/2025 09:03:51 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/02/2025 09:03:51 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|████████████████████████████████████████| 41/41 [00:00<00:00, 52524.88it/s]
+12/02/2025 09:03:53 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/02/2025 09:03:53 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|████████████████████████████████████████| 53/53 [00:00<00:00, 55783.72it/s]
+Resolving data files: 100%|████████████████████████████████████████| 53/53 [00:00<00:00, 60803.64it/s]
+12/02/2025 09:03:55 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/02/2025 09:03:55 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|██████████████████████████████████████| 144/144 [00:00<00:00, 67597.07it/s]
+'(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090357Z&X-Amz-Expires=3600&X-Amz-Signature=c0bb37195b5461a730b2e8fb70c5bb595d2dd3d94959b318a39ce5f592acda18&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669837&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTgzN319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=PQiGR44UDLV3t3okKTA-6ykG7o8hGfLL5hMFelj~bQzepBqVjgbpXsR-GKz1u2sVC53Vq1wdKgOr5wJuZ0Ms2rGwmy-rCXKRZbeTWe1vXyREzzb-MjnEbWyLOZ62y0C7Bo0~kix0Bk7UsGsZq60aapqP14qFTzRRkwnl47Qss32hkY07RcHtISGDBc-aRUPhpcCaUtOnfJfnKxkj0WUgOFOeuEOmDCWLRxfld8ttr9RAP5jPmyCSTPyjBmMlzKZtOfpRo1NshdZ~ltss3rSbXOWioNIjKW3pdP9XakvqdiRTbTue5Ci689wnEORBx1ZpB4TLp~7lUVTtfY5jyPojYg__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3722990>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: 82affb3b-caa9-479a-bbbd-3d30e9e2a974)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+12/02/2025 09:04:37 - WARNING - huggingface_hub.utils._http - '(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090357Z&X-Amz-Expires=3600&X-Amz-Signature=c0bb37195b5461a730b2e8fb70c5bb595d2dd3d94959b318a39ce5f592acda18&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669837&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTgzN319LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=PQiGR44UDLV3t3okKTA-6ykG7o8hGfLL5hMFelj~bQzepBqVjgbpXsR-GKz1u2sVC53Vq1wdKgOr5wJuZ0Ms2rGwmy-rCXKRZbeTWe1vXyREzzb-MjnEbWyLOZ62y0C7Bo0~kix0Bk7UsGsZq60aapqP14qFTzRRkwnl47Qss32hkY07RcHtISGDBc-aRUPhpcCaUtOnfJfnKxkj0WUgOFOeuEOmDCWLRxfld8ttr9RAP5jPmyCSTPyjBmMlzKZtOfpRo1NshdZ~ltss3rSbXOWioNIjKW3pdP9XakvqdiRTbTue5Ci689wnEORBx1ZpB4TLp~7lUVTtfY5jyPojYg__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3722990>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: 82affb3b-caa9-479a-bbbd-3d30e9e2a974)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+Retrying in 1s [Retry 1/5].
+12/02/2025 09:04:37 - WARNING - huggingface_hub.utils._http - Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090438Z&X-Amz-Expires=3600&X-Amz-Signature=290657b6c868d8202711b9713766000ce3d82fd6894032b4d2a9d72c32040ddf&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669878&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTg3OH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=hRvHxiEkKHXb06wZBhhsr6wiWqFMFeXtMeq4tyT7XuL9nmgb2tpZYAAOj0trctRNYb5RN6sL98ZgR3OljFgycCYyj~tJX6M8UW72TQfYPpa9xc8b7eCFtU2F86152M1Wdcy8yB85-~BWOV0L8b6awnA4dyXKogZ0Jv5HOhOR3qub00~wPtLcgjCvH~CSDj6CQFDnmci1st4FVGSielqnzAStOC1u3AbjGNzoVWGh9D47ya4I-cIvo1AYJMK69zbKxGf0hP6lRr6J~N~KmBSOpXX3cCZZ3f-YPkau9xFLqzammFGz0oYepeS8Q5nW3qd~3haAEZmD9Ed52cUj0tr2sQ__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3722fd0>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: c7f6fde9-e8ec-4d6f-9588-f8b5e18995d3)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+12/02/2025 09:05:18 - WARNING - huggingface_hub.utils._http - '(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090438Z&X-Amz-Expires=3600&X-Amz-Signature=290657b6c868d8202711b9713766000ce3d82fd6894032b4d2a9d72c32040ddf&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669878&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTg3OH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=hRvHxiEkKHXb06wZBhhsr6wiWqFMFeXtMeq4tyT7XuL9nmgb2tpZYAAOj0trctRNYb5RN6sL98ZgR3OljFgycCYyj~tJX6M8UW72TQfYPpa9xc8b7eCFtU2F86152M1Wdcy8yB85-~BWOV0L8b6awnA4dyXKogZ0Jv5HOhOR3qub00~wPtLcgjCvH~CSDj6CQFDnmci1st4FVGSielqnzAStOC1u3AbjGNzoVWGh9D47ya4I-cIvo1AYJMK69zbKxGf0hP6lRr6J~N~KmBSOpXX3cCZZ3f-YPkau9xFLqzammFGz0oYepeS8Q5nW3qd~3haAEZmD9Ed52cUj0tr2sQ__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3722fd0>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: c7f6fde9-e8ec-4d6f-9588-f8b5e18995d3)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+Retrying in 2s [Retry 2/5].
+12/02/2025 09:05:18 - WARNING - huggingface_hub.utils._http - Retrying in 2s [Retry 2/5].
+'(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090520Z&X-Amz-Expires=3600&X-Amz-Signature=e6d2e8c3833bcb5be8381694ab81d7f38dd2812d3e740300f405ee11744c0f1d&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669920&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTkyMH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=PAvdRWndIBxu32LfDjkHXPA--hVEaBHkkF40pZFJkKGkxQLjgV-O5~sm09AXbO6v7E1SS8dpJtCjKhdINSDGFTEjjzVmXJ-afO04xK4~EbdFh9s4SxUAQxNnd8lOwG1F8mXbQ3WxQruNXLCg8ZSBNL34FTJNnBUi5WPBZxzqr54Eynfi27WlE9I1zmLwdlmqQfVQ90-UInH3mnGAOuWXAydIf5W1zq9nTtkXWdFmUrnUuQm4Cb8o7Hf3N5bvgQCzQAa2abHy3aBvOAMXi655zLFAyf8ocQAu4fWZ9nxysKs7uXrYeFFbfXm70WVzWP6EEyqpBj6AJTMm1XTnagFirA__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3723250>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: ea7db655-7c80-4aba-ad8e-0488fc4ded75)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+12/02/2025 09:06:00 - WARNING - huggingface_hub.utils._http - '(MaxRetryError("HTTPSConnectionPool(host='cas-bridge.xethub.hf.co', port=443): Max retries exceeded with url: /xet-bridge-us/633f151f33ba83e00bd74c15/860cf2157970a2ca3cccb21e8b1156dd0e43b61b21d3fb6ef9f8a01c47c7cde0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251202T090520Z&X-Amz-Expires=3600&X-Amz-Signature=e6d2e8c3833bcb5be8381694ab81d7f38dd2812d3e740300f405ee11744c0f1d&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=65d906420e6ad245518dc9e1&response-content-disposition=inline%3B+filename*%3DUTF-8%27%27data-00000-of-00144.parquet%3B+filename%3D%22data-00000-of-00144.parquet%22%3B&x-id=GetObject&Expires=1764669920&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2NDY2OTkyMH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82MzNmMTUxZjMzYmE4M2UwMGJkNzRjMTUvODYwY2YyMTU3OTcwYTJjYTNjY2NiMjFlOGIxMTU2ZGQwZTQzYjYxYjIxZDNmYjZlZjlmOGEwMWM0N2M3Y2RlMCoifV19&Signature=PAvdRWndIBxu32LfDjkHXPA--hVEaBHkkF40pZFJkKGkxQLjgV-O5~sm09AXbO6v7E1SS8dpJtCjKhdINSDGFTEjjzVmXJ-afO04xK4~EbdFh9s4SxUAQxNnd8lOwG1F8mXbQ3WxQruNXLCg8ZSBNL34FTJNnBUi5WPBZxzqr54Eynfi27WlE9I1zmLwdlmqQfVQ90-UInH3mnGAOuWXAydIf5W1zq9nTtkXWdFmUrnUuQm4Cb8o7Hf3N5bvgQCzQAa2abHy3aBvOAMXi655zLFAyf8ocQAu4fWZ9nxysKs7uXrYeFFbfXm70WVzWP6EEyqpBj6AJTMm1XTnagFirA__&Key-Pair-Id=K2L8F4GPSG1IFC (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x72fae3723250>, 'Connection to cas-bridge.xethub.hf.co timed out. (connect timeout=10)'))"), '(Request ID: ea7db655-7c80-4aba-ad8e-0488fc4ded75)')' thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/python/data-00000-of-00144.parquet
+Retrying in 4s [Retry 3/5].
+12/02/2025 09:06:00 - WARNING - huggingface_hub.utils._http - Retrying in 4s [Retry 3/5].
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 283, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 346, in train
+    batch = next(train_iterator)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+    next_batch, next_batch_info = self._fetch_batches(main_iterator)
+                                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+    batches.append(next(iterator))
+                   ~~~~^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+    data = self._next_data()
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+    data.append(next(self.dataset_iter))
+                ~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 416, in __iter__
+    dataset = self._get_dataset()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 364, in _get_dataset
+    self._dataset = create_pretrain_mixture(
+                    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self.tokenizer,
+        ^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        self.seed + self.worker_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 300, in create_pretrain_mixture
+    ds = load_single_dataset(config, tokenizer, max_length)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 197, in load_single_dataset
+    ds = load_dataset(
+        config.path,
+        **load_kwargs,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1414, in load_dataset
+    return builder_instance.as_streaming_dataset(split=split)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/builder.py", line 1228, in as_streaming_dataset
+    splits_generators = {sg.name: sg for sg in self._split_generators(dl_manager)}
+                                               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/packaged_modules/parquet/parquet.py", line 122, in _split_generators
+    self.info.features = datasets.Features.from_arrow_schema(pq.read_schema(f))
+                                                             ~~~~~~~~~~~~~~^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/pyarrow/parquet/core.py", line 2393, in read_schema
+    file = ParquetFile(
+        where, memory_map=memory_map,
+        decryption_properties=decryption_properties)
+  File "/root/miniconda3/lib/python3.13/site-packages/pyarrow/parquet/core.py", line 328, in __init__
+    self.reader.open(
+    ~~~~~~~~~~~~~~~~^
+        source, use_memory_map=memory_map,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        arrow_extensions_enabled=arrow_extensions_enabled,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "pyarrow/_parquet.pyx", line 1656, in pyarrow._parquet.ParquetReader.open
+  File "pyarrow/error.pxi", line 89, in pyarrow.lib.check_status
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/utils/file_utils.py", line 824, in read_with_retries
+    out = read(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/hf_file_system.py", line 1016, in read
+    return super().read(length)
+           ~~~~~~~~~~~~^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/fsspec/spec.py", line 2122, in read
+    out = self.cache._fetch(self.loc, self.loc + length)
+  File "/root/miniconda3/lib/python3.13/site-packages/fsspec/caching.py", line 287, in _fetch
+    self.cache = self.fetcher(start, end)  # new block replaces old
+                 ~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/hf_file_system.py", line 976, in _fetch_range
+    r = http_backoff("GET", url, headers=headers, timeout=constants.HF_HUB_DOWNLOAD_TIMEOUT)
+  File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 306, in http_backoff
+    response = session.request(method=method, url=url, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 724, in send
+    history = [resp for resp in gen]
+                                ^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 265, in resolve_redirects
+    resp = self.send(
+        req,
+    ...<6 lines>...
+        **adapter_kwargs,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+    return super().send(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 753, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 283, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 346, in train
+[rank0]:     batch = next(train_iterator)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+[rank0]:     next_batch, next_batch_info = self._fetch_batches(main_iterator)
+[rank0]:                                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+[rank0]:     batches.append(next(iterator))
+[rank0]:                    ~~~~^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ~~~~^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 416, in __iter__
+[rank0]:     dataset = self._get_dataset()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 364, in _get_dataset
+[rank0]:     self._dataset = create_pretrain_mixture(
+[rank0]:                     ~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         self.tokenizer,
+[rank0]:         ^^^^^^^^^^^^^^^
+[rank0]:     ...<3 lines>...
+[rank0]:         self.seed + self.worker_id,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 300, in create_pretrain_mixture
+[rank0]:     ds = load_single_dataset(config, tokenizer, max_length)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 197, in load_single_dataset
+[rank0]:     ds = load_dataset(
+[rank0]:         config.path,
+[rank0]:         **load_kwargs,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1414, in load_dataset
+[rank0]:     return builder_instance.as_streaming_dataset(split=split)
+[rank0]:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/builder.py", line 1228, in as_streaming_dataset
+[rank0]:     splits_generators = {sg.name: sg for sg in self._split_generators(dl_manager)}
+[rank0]:                                                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/packaged_modules/parquet/parquet.py", line 122, in _split_generators
+[rank0]:     self.info.features = datasets.Features.from_arrow_schema(pq.read_schema(f))
+[rank0]:                                                              ~~~~~~~~~~~~~~^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/pyarrow/parquet/core.py", line 2393, in read_schema
+[rank0]:     file = ParquetFile(
+[rank0]:         where, memory_map=memory_map,
+[rank0]:         decryption_properties=decryption_properties)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/pyarrow/parquet/core.py", line 328, in __init__
+[rank0]:     self.reader.open(
+[rank0]:     ~~~~~~~~~~~~~~~~^
+[rank0]:         source, use_memory_map=memory_map,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     ...<8 lines>...
+[rank0]:         arrow_extensions_enabled=arrow_extensions_enabled,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "pyarrow/_parquet.pyx", line 1656, in pyarrow._parquet.ParquetReader.open
+[rank0]:   File "pyarrow/error.pxi", line 89, in pyarrow.lib.check_status
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/utils/file_utils.py", line 824, in read_with_retries
+[rank0]:     out = read(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/hf_file_system.py", line 1016, in read
+[rank0]:     return super().read(length)
+[rank0]:            ~~~~~~~~~~~~^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/fsspec/spec.py", line 2122, in read
+[rank0]:     out = self.cache._fetch(self.loc, self.loc + length)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/fsspec/caching.py", line 287, in _fetch
+[rank0]:     self.cache = self.fetcher(start, end)  # new block replaces old
+[rank0]:                  ~~~~~~~~~~~~^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/hf_file_system.py", line 976, in _fetch_range
+[rank0]:     r = http_backoff("GET", url, headers=headers, timeout=constants.HF_HUB_DOWNLOAD_TIMEOUT)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 306, in http_backoff
+[rank0]:     response = session.request(method=method, url=url, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+[rank0]:     resp = self.send(prep, **send_kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 724, in send
+[rank0]:     history = [resp for resp in gen]
+[rank0]:                                 ^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 265, in resolve_redirects
+[rank0]:     resp = self.send(
+[rank0]:         req,
+[rank0]:     ...<6 lines>...
+[rank0]:         **adapter_kwargs,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+[rank0]:     r = adapter.send(request, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/huggingface_hub/utils/_http.py", line 95, in send
+[rank0]:     return super().send(request, *args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/requests/adapters.py", line 644, in send
+[rank0]:     resp = conn.urlopen(
+[rank0]:         method=request.method,
+[rank0]:     ...<9 lines>...
+[rank0]:         chunked=chunked,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+[rank0]:     response = self._make_request(
+[rank0]:         conn,
+[rank0]:     ...<10 lines>...
+[rank0]:         **response_kw,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+[rank0]:     self._validate_conn(conn)
+[rank0]:     ~~~~~~~~~~~~~~~~~~~^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+[rank0]:     conn.connect()
+[rank0]:     ~~~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 753, in connect
+[rank0]:     self.sock = sock = self._new_conn()
+[rank0]:                        ~~~~~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/connection.py", line 198, in _new_conn
+[rank0]:     sock = connection.create_connection(
+[rank0]:         (self._dns_host, self.port),
+[rank0]:     ...<2 lines>...
+[rank0]:         socket_options=self.socket_options,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/urllib3/util/connection.py", line 73, in create_connection
+[rank0]:     sock.connect(sa)
+[rank0]:     ~~~~~~~~~~~~^^^^
+[rank0]: KeyboardInterrupt

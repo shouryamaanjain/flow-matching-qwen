@@ -1,0 +1,95 @@
+_wandb:
+    value:
+        cli_version: 0.23.0
+        e:
+            n7p95o9pkph7o9xrsc8lnr6xxg67aplw:
+                args:
+                    - --config
+                    - training/configs/pretrain_h100x4.yaml
+                    - --output_dir
+                    - ./checkpoints/flow_matching_qwen_1.7b
+                    - --include_stack_v1
+                codePath: flow-matching-qwen/training/train_h100.py
+                codePathLocal: training/train_h100.py
+                cpu_count: 80
+                cpu_count_logical: 160
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "161061273600"
+                        used: "10111721472"
+                email: jainshouryamaan@gmail.com
+                executable: /root/miniconda3/bin/python3.13
+                git:
+                    commit: 2c8c626afd560659c21213cb02939d417bb76c71
+                    remote: https://github.com/SalesforceAIResearch/CoDA.git
+                gpu: NVIDIA H100 80GB HBM3
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-61b1e25a-fb66-0680-7720-ab2b36eb997b
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-f7945581-07e2-9f63-24a8-ee582e7ef24c
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-7b5ae675-c64f-24c1-61b0-006e31f276a0
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "85520809984"
+                      name: NVIDIA H100 80GB HBM3
+                      uuid: GPU-7f5124ef-0754-cf8e-4239-36525846dd6f
+                host: caa7518db9d6
+                memory:
+                    total: "1623318458368"
+                os: Linux-6.8.0-56-generic-x86_64-with-glibc2.39
+                program: /workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py
+                python: CPython 3.13.9
+                root: /workspace/flow-matching/CoDA/flow-matching-qwen
+                startedAt: "2025-12-01T20:29:52.804913Z"
+                writerId: n7p95o9pkph7o9xrsc8lnr6xxg67aplw
+        m: []
+        python_version: 3.13.9
+        t:
+            "1":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+            "2":
+                - 1
+                - 11
+                - 49
+                - 51
+                - 71
+            "3":
+                - 13
+                - 16
+                - 61
+            "4": 3.13.9
+            "5": 0.23.0
+            "6": 4.57.3
+            "12": 0.23.0
+            "13": linux-x86_64
+global_batch_size:
+    value: 128
+learning_rate:
+    value: 0.0003
+max_steps:
+    value: 210000
+model:
+    value: Qwen/Qwen3-1.7B
+scheduler_n:
+    value: 1
+scheduler_type:
+    value: polynomial_convex
+sequence_length:
+    value: 8192

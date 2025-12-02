@@ -1,0 +1,58 @@
+12/01/2025 19:20:55 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:20:55 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 19:20:55 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:20:55 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 19:20:55 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:20:55 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|███████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 68447.18it/s]
+12/01/2025 19:21:12 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:21:12 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 65698.08it/s]
+12/01/2025 19:21:14 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:21:14 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'togethercomputer/RedPajama-Data-1T' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:21:14 - ERROR - datasets.load - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'togethercomputer/RedPajama-Data-1T' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:21:15 - WARNING - data.data_loader - Failed to load dataset redpajama-arxiv: Dataset scripts are no longer supported, but found RedPajama-Data-1T.py
+12/01/2025 19:21:15 - WARNING - data.data_loader - ✗ Skipped redpajama-arxiv
+12/01/2025 19:21:15 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 55401.57it/s]
+12/01/2025 19:21:17 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:21:17 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'deepmind/math_dataset' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:21:17 - ERROR - datasets.load - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'deepmind/math_dataset' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:21:17 - WARNING - data.data_loader - Failed to load dataset deepmind-math: Dataset scripts are no longer supported, but found math_dataset.py
+12/01/2025 19:21:17 - WARNING - data.data_loader - ✗ Skipped deepmind-math
+12/01/2025 19:21:17 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 66554.25it/s]
+12/01/2025 19:21:19 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:21:19 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 74413.91it/s]
+12/01/2025 19:21:21 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:21:21 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 72677.04it/s]
+12/01/2025 19:21:23 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:21:23 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 68789.84it/s]
+12/01/2025 19:21:25 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 19:21:25 - INFO - data.data_loader - Creating mixture with 7 datasets
+12/01/2025 19:21:25 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.34518960472721016, 'openwebmath': 0.07446503356089726, 'wikipedia-en': 0.031036658826229132, 'stack-v1-python': 0.29114795479318456, 'stack-v1-javascript': 0.11473811026332396, 'stack-v1-java': 0.08605358269749297, 'stack-v1-cpp': 0.05736905513166198}
+12/01/2025 19:21:51 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1
+12/01/2025 19:22:01 - INFO - accelerate.checkpointing - Model weights saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/model.safetensors
+12/01/2025 19:22:01 - INFO - accelerate.checkpointing - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/optimizer.bin
+12/01/2025 19:22:01 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/scheduler.bin
+12/01/2025 19:22:01 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/sampler.bin
+12/01/2025 19:22:01 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1/random_states_0.pkl
+12/01/2025 19:22:01 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-1
+12/01/2025 19:22:01 - INFO - training.fm_trainer - Training complete!

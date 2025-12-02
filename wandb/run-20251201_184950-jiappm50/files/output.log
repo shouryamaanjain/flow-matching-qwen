@@ -1,0 +1,210 @@
+12/01/2025 18:49:51 - INFO - training.fm_trainer - Starting training
+12/01/2025 18:49:51 - INFO - training.fm_trainer -   Max steps: 1
+12/01/2025 18:49:51 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 18:49:51 - INFO - training.fm_trainer -   Gradient accumulation steps: 4
+12/01/2025 18:49:51 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 18:49:51 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+12/01/2025 18:50:23 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 18:50:23 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+12/01/2025 18:50:27 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 18:50:27 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+12/01/2025 18:50:30 - INFO - data.data_loader - ✓ Loaded redpajama-arxiv with weight 9.18
+12/01/2025 18:50:30 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Downloading readme: 131kB [00:00, 25.8MB/s]
+12/01/2025 18:50:35 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 18:50:35 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+12/01/2025 18:50:41 - INFO - data.data_loader - ✓ Loaded deepmind-math with weight 3.24
+12/01/2025 18:50:41 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Downloading readme: 100%|██████████| 19.3k/19.3k [00:00<00:00, 3.42MB/s]
+12/01/2025 18:50:45 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 18:50:45 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+12/01/2025 18:50:48 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 18:50:48 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+12/01/2025 18:50:51 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 18:50:51 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+12/01/2025 18:51:03 - WARNING - data.data_loader - Failed to load dataset stack-v1-cpp: The directory at hf://datasets/bigcode/the-stack-dedup@17cad72c886a2858e08d4c349a00d6466f54df63/data/c++ doesn't contain any data files
+12/01/2025 18:51:03 - WARNING - data.data_loader - ✗ Skipped stack-v1-cpp
+12/01/2025 18:51:03 - INFO - data.data_loader - Creating mixture with 8 datasets
+12/01/2025 18:51:03 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3404628529395123, 'openwebmath': 0.07344536864143043, 'redpajama-arxiv': 0.051943642845017825, 'wikipedia-en': 0.030611667515419005, 'deepmind-math': 0.018333050415888646, 'stack-v1-python': 0.28716120635998416, 'stack-v1-javascript': 0.11316697787585583, 'stack-v1-java': 0.08487523340689188}
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+    main()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+    trainer.train()
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 317, in train
+    batch = next(train_iterator)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/data_loader.py", line 866, in __iter__
+    next_batch, next_batch_info = self._fetch_batches(main_iterator)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+    batches.append(next(iterator))
+                   ^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 734, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+    data.append(next(self.dataset_iter))
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 427, in __iter__
+    dataset = self._get_dataset()
+              ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 375, in _get_dataset
+    self._dataset = create_pretrain_mixture(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 331, in create_pretrain_mixture
+    mixed_dataset = interleave_datasets(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/combine.py", line 153, in interleave_datasets
+    return _interleave_iterable_datasets(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 2322, in _interleave_iterable_datasets
+    datasets = [d._resolve_features() for d in datasets]
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 2216, in _resolve_features
+    features = _infer_features_from_batch(self.with_format(None)._head())
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1239, in _head
+    return _examples_to_batch(list(self.take(n)))
+                              ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1389, in __iter__
+    for key, example in ex_iterable:
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1044, in __iter__
+    yield from islice(self.ex_iterable, self.n)
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 679, in __iter__
+    yield from self._iter()
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 741, in _iter
+    for key, example in iterator:
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1119, in __iter__
+    for key, example in self.ex_iterable:
+  File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 282, in __iter__
+    for key, pa_table in self.generate_tables_fn(**self.kwargs):
+  File "/usr/local/lib/python3.12/dist-packages/datasets/packaged_modules/json/json.py", line 79, in _generate_tables
+    for file_idx, file in enumerate(itertools.chain.from_iterable(files)):
+  File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1574, in __iter__
+    for x in self.generator(*self.args, **self.kwargs):
+  File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1655, in _iter_from_urlpaths
+    if xisfile(urlpath, download_config=download_config):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1021, in xisfile
+    fs, *_ = url_to_fs(path, **storage_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 395, in url_to_fs
+    fs = filesystem(protocol, **inkwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/registry.py", line 293, in filesystem
+    return cls(**storage_options)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/spec.py", line 80, in __call__
+    obj = super().__call__(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/datasets/filesystems/compression.py", line 36, in __init__
+    self.file = fsspec.open(
+                ^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 461, in open
+    out = open_files(
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 303, in open_files
+    OpenFile(
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 77, in __init__
+    self.compression = get_compression(path, compression)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 513, in get_compression
+    raise ValueError(f"Compression type {compression} not supported")
+ValueError: Compression type zstd not supported
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+[rank0]:     main()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+[rank0]:     trainer.train()
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 317, in train
+[rank0]:     batch = next(train_iterator)
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/data_loader.py", line 866, in __iter__
+[rank0]:     next_batch, next_batch_info = self._fetch_batches(main_iterator)
+[rank0]:                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+[rank0]:     batches.append(next(iterator))
+[rank0]:                    ^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 734, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/dataloader.py", line 790, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 427, in __iter__
+[rank0]:     dataset = self._get_dataset()
+[rank0]:               ^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 375, in _get_dataset
+[rank0]:     self._dataset = create_pretrain_mixture(
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/data/data_loader.py", line 331, in create_pretrain_mixture
+[rank0]:     mixed_dataset = interleave_datasets(
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/combine.py", line 153, in interleave_datasets
+[rank0]:     return _interleave_iterable_datasets(
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 2322, in _interleave_iterable_datasets
+[rank0]:     datasets = [d._resolve_features() for d in datasets]
+[rank0]:                 ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 2216, in _resolve_features
+[rank0]:     features = _infer_features_from_batch(self.with_format(None)._head())
+[rank0]:                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1239, in _head
+[rank0]:     return _examples_to_batch(list(self.take(n)))
+[rank0]:                               ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1389, in __iter__
+[rank0]:     for key, example in ex_iterable:
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1044, in __iter__
+[rank0]:     yield from islice(self.ex_iterable, self.n)
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 679, in __iter__
+[rank0]:     yield from self._iter()
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 741, in _iter
+[rank0]:     for key, example in iterator:
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 1119, in __iter__
+[rank0]:     for key, example in self.ex_iterable:
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/iterable_dataset.py", line 282, in __iter__
+[rank0]:     for key, pa_table in self.generate_tables_fn(**self.kwargs):
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/packaged_modules/json/json.py", line 79, in _generate_tables
+[rank0]:     for file_idx, file in enumerate(itertools.chain.from_iterable(files)):
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1574, in __iter__
+[rank0]:     for x in self.generator(*self.args, **self.kwargs):
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1655, in _iter_from_urlpaths
+[rank0]:     if xisfile(urlpath, download_config=download_config):
+[rank0]:        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/utils/file_utils.py", line 1021, in xisfile
+[rank0]:     fs, *_ = url_to_fs(path, **storage_options)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 395, in url_to_fs
+[rank0]:     fs = filesystem(protocol, **inkwargs)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/registry.py", line 293, in filesystem
+[rank0]:     return cls(**storage_options)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/spec.py", line 80, in __call__
+[rank0]:     obj = super().__call__(*args, **kwargs)
+[rank0]:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/datasets/filesystems/compression.py", line 36, in __init__
+[rank0]:     self.file = fsspec.open(
+[rank0]:                 ^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 461, in open
+[rank0]:     out = open_files(
+[rank0]:           ^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 303, in open_files
+[rank0]:     OpenFile(
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 77, in __init__
+[rank0]:     self.compression = get_compression(path, compression)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/usr/local/lib/python3.12/dist-packages/fsspec/core.py", line 513, in get_compression
+[rank0]:     raise ValueError(f"Compression type {compression} not supported")
+[rank0]: ValueError: Compression type zstd not supported

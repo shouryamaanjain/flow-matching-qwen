@@ -1,0 +1,11 @@
+{"time":"2025-12-01T19:16:25.221035404Z","level":"INFO","msg":"stream: starting","core version":"0.23.0"}
+{"time":"2025-12-01T19:16:25.644098817Z","level":"INFO","msg":"stream: created new stream","id":"teau4xv5"}
+{"time":"2025-12-01T19:16:25.644177763Z","level":"INFO","msg":"handler: started","stream_id":"teau4xv5"}
+{"time":"2025-12-01T19:16:25.644237496Z","level":"INFO","msg":"stream: started","id":"teau4xv5"}
+{"time":"2025-12-01T19:16:25.644401597Z","level":"INFO","msg":"sender: started","stream_id":"teau4xv5"}
+{"time":"2025-12-01T19:16:25.644403422Z","level":"INFO","msg":"writer: started","stream_id":"teau4xv5"}
+{"time":"2025-12-01T19:17:27.632435786Z","level":"INFO","msg":"stream: closing","id":"teau4xv5"}
+{"time":"2025-12-01T19:17:28.254662112Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-01T19:17:28.660543853Z","level":"INFO","msg":"handler: closed","stream_id":"teau4xv5"}
+{"time":"2025-12-01T19:17:28.660687169Z","level":"INFO","msg":"sender: closed","stream_id":"teau4xv5"}
+{"time":"2025-12-01T19:17:28.660692526Z","level":"INFO","msg":"stream: closed","id":"teau4xv5"}

@@ -1,0 +1,220 @@
+12/01/2025 19:08:46 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:08:46 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 19:08:46 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:08:46 - INFO - training.fm_trainer -   Gradient accumulation steps: 4
+12/01/2025 19:08:46 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:08:46 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|███████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 64972.57it/s]
+12/01/2025 19:09:02 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:09:02 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 61912.55it/s]
+12/01/2025 19:09:04 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:09:04 - INFO - data.data_loader - Loading dataset: redpajama-arxiv from togethercomputer/RedPajama-Data-1T
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'togethercomputer/RedPajama-Data-1T' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:09:04 - ERROR - datasets.load - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'togethercomputer/RedPajama-Data-1T' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:09:04 - WARNING - data.data_loader - Failed to load dataset redpajama-arxiv: Dataset scripts are no longer supported, but found RedPajama-Data-1T.py
+12/01/2025 19:09:04 - WARNING - data.data_loader - ✗ Skipped redpajama-arxiv
+12/01/2025 19:09:04 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 56179.83it/s]
+12/01/2025 19:09:06 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:09:06 - INFO - data.data_loader - Loading dataset: deepmind-math from deepmind/math_dataset
+`trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'deepmind/math_dataset' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:09:06 - ERROR - datasets.load - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'deepmind/math_dataset' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+12/01/2025 19:09:07 - WARNING - data.data_loader - Failed to load dataset deepmind-math: Dataset scripts are no longer supported, but found math_dataset.py
+12/01/2025 19:09:07 - WARNING - data.data_loader - ✗ Skipped deepmind-math
+12/01/2025 19:09:07 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 70492.50it/s]
+12/01/2025 19:09:09 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:09:09 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 73079.71it/s]
+12/01/2025 19:09:11 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:09:11 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 72974.93it/s]
+12/01/2025 19:09:14 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:09:14 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+12/01/2025 19:09:25 - WARNING - data.data_loader - Failed to load dataset stack-v1-cpp: The directory at hf://datasets/bigcode/the-stack-dedup@17cad72c886a2858e08d4c349a00d6466f54df63/data/c%2B%2B doesn't contain any data files
+12/01/2025 19:09:25 - WARNING - data.data_loader - ✗ Skipped stack-v1-cpp
+12/01/2025 19:09:25 - INFO - data.data_loader - Creating mixture with 6 datasets
+12/01/2025 19:09:25 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3661980402896963, 'openwebmath': 0.07899701783214655, 'wikipedia-en': 0.032925567524800685, 'stack-v1-python': 0.3088673848213742, 'stack-v1-javascript': 0.12172113687541841, 'stack-v1-java': 0.09129085265656381}
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+    loss = self.train_step(batch)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+    logits, loss = self.model(
+                   ~~~~~~~~~~^
+        input_ids=input_ids,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        training_mode="pretrain",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/parallel/distributed.py", line 1661, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/parallel/distributed.py", line 1487, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+    hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+    hidden_states = self.layers(
+        hidden_states,
+    ...<2 lines>...
+        position_embeddings=position_embeddings,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+    input = module(*splat(input), **broadcasted_inputs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 249, in forward
+    hidden_states = self.self_attn(
+        hidden_states=hidden_states,
+    ...<2 lines>...
+        position_embeddings=position_embeddings,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 169, in forward
+    attn_output = F.scaled_dot_product_attention(
+        query_states,
+    ...<4 lines>...
+        is_causal=False,  # CRITICAL: Bidirectional attention for flow matching
+    )
+RuntimeError: Expected attn_mask dtype to be bool or float or to match query dtype, but got attn_mask.dtype: long int and  query.dtype: c10::BFloat16 instead.
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 285, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 281, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 325, in train
+[rank0]:     loss = self.train_step(batch)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 276, in train_step
+[rank0]:     logits, loss = self.model(
+[rank0]:                    ~~~~~~~~~~^
+[rank0]:         input_ids=input_ids,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^
+[rank0]:     ...<2 lines>...
+[rank0]:         training_mode="pretrain",
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/parallel/distributed.py", line 1661, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:          ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/parallel/distributed.py", line 1487, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:            ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 819, in forward
+[rank0]:     return model_forward(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 807, in __call__
+[rank0]:     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[rank0]:                            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+[rank0]:     hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+[rank0]:     hidden_states = self.layers(
+[rank0]:         hidden_states,
+[rank0]:     ...<2 lines>...
+[rank0]:         position_embeddings=position_embeddings,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+[rank0]:     input = module(*splat(input), **broadcasted_inputs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 249, in forward
+[rank0]:     hidden_states = self.self_attn(
+[rank0]:         hidden_states=hidden_states,
+[rank0]:     ...<2 lines>...
+[rank0]:         position_embeddings=position_embeddings,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 169, in forward
+[rank0]:     attn_output = F.scaled_dot_product_attention(
+[rank0]:         query_states,
+[rank0]:     ...<4 lines>...
+[rank0]:         is_causal=False,  # CRITICAL: Bidirectional attention for flow matching
+[rank0]:     )
+[rank0]: RuntimeError: Expected attn_mask dtype to be bool or float or to match query dtype, but got attn_mask.dtype: long int and  query.dtype: c10::BFloat16 instead.

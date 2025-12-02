@@ -1,0 +1,38 @@
+12/01/2025 19:41:52 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:41:52 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 19:41:52 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:41:52 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 19:41:52 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:41:52 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|███████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 70046.27it/s]
+12/01/2025 19:42:09 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:42:09 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 65779.43it/s]
+12/01/2025 19:42:11 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:42:11 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/01/2025 19:42:11 - WARNING - data.data_loader - Failed to load dataset arxiv-summarization: Fast download using 'hf_transfer' is enabled (HF_HUB_ENABLE_HF_TRANSFER=1) but 'hf_transfer' package is not available in your environment. Try `pip install hf_transfer`.
+12/01/2025 19:42:11 - WARNING - data.data_loader - ✗ Skipped arxiv-summarization
+12/01/2025 19:42:11 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 56253.34it/s]
+12/01/2025 19:42:14 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:42:14 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+12/01/2025 19:42:14 - WARNING - data.data_loader - Failed to load dataset mathpile: Fast download using 'hf_transfer' is enabled (HF_HUB_ENABLE_HF_TRANSFER=1) but 'hf_transfer' package is not available in your environment. Try `pip install hf_transfer`.
+12/01/2025 19:42:14 - WARNING - data.data_loader - ✗ Skipped mathpile
+12/01/2025 19:42:14 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 70781.64it/s]
+12/01/2025 19:42:16 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:42:16 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 72408.21it/s]
+12/01/2025 19:42:18 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:42:18 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 70612.32it/s]
+12/01/2025 19:42:20 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:42:20 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 67069.84it/s]
+12/01/2025 19:42:21 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 19:42:21 - INFO - data.data_loader - Creating mixture with 7 datasets
+12/01/2025 19:42:21 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.34518960472721016, 'openwebmath': 0.07446503356089726, 'wikipedia-en': 0.031036658826229132, 'stack-v1-python': 0.29114795479318456, 'stack-v1-javascript': 0.11473811026332396, 'stack-v1-java': 0.08605358269749297, 'stack-v1-cpp': 0.05736905513166198}

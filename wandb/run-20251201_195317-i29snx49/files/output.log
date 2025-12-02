@@ -1,0 +1,81 @@
+12/01/2025 19:53:18 - INFO - training.fm_trainer - Starting training
+12/01/2025 19:53:18 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 19:53:18 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 19:53:18 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 19:53:18 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 19:53:18 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|███████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 68022.86it/s]
+12/01/2025 19:53:34 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 19:53:34 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 61728.72it/s]
+12/01/2025 19:53:36 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 19:53:36 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/01/2025 19:53:38 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/01/2025 19:53:38 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 54454.23it/s]
+12/01/2025 19:53:40 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 19:53:40 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 55408.30it/s]
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 52802.40it/s]
+12/01/2025 19:53:41 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/01/2025 19:53:41 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 70402.12it/s]
+12/01/2025 19:53:44 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 19:53:44 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 72251.29it/s]
+12/01/2025 19:53:45 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 19:53:45 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 70282.38it/s]
+12/01/2025 19:53:47 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 19:53:47 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 69567.77it/s]
+12/01/2025 19:53:48 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 19:53:48 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/01/2025 19:53:48 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/zwhe99/mathpile-text/resolve/25e4e7e93e085df486526252a6c56636d23d75d4/data/train-00000-of-00053.parquet
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/zwhe99/mathpile-text/resolve/25e4e7e93e085df486526252a6c56636d23d75d4/data/train-00000-of-00053.parquet
+Retrying in 1s [Retry 1/5].
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - Retrying in 1s [Retry 1/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/open-web-math/open-web-math/resolve/fde8ef8de2300f5e778f56261843dab89f230815/data/train-00000-of-00114-5a023365406cb9c4.parquet
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/open-web-math/open-web-math/resolve/fde8ef8de2300f5e778f56261843dab89f230815/data/train-00000-of-00114-5a023365406cb9c4.parquet
+Retrying in 1s [Retry 1/5].
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - Retrying in 1s [Retry 1/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00000-of-00041.parquet
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00000-of-00041.parquet
+Retrying in 1s [Retry 1/5].
+12/01/2025 19:54:19 - WARNING - huggingface_hub.utils._http - Retrying in 1s [Retry 1/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/java/data-00000-of-00208.parquet
+12/01/2025 19:54:20 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/bigcode/the-stack-dedup/resolve/17cad72c886a2858e08d4c349a00d6466f54df63/data/java/data-00000-of-00208.parquet
+Retrying in 1s [Retry 1/5].
+12/01/2025 19:54:20 - WARNING - huggingface_hub.utils._http - Retrying in 1s [Retry 1/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/zwhe99/mathpile-text/resolve/25e4e7e93e085df486526252a6c56636d23d75d4/data/train-00000-of-00053.parquet
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/zwhe99/mathpile-text/resolve/25e4e7e93e085df486526252a6c56636d23d75d4/data/train-00000-of-00053.parquet
+Retrying in 2s [Retry 2/5].
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - Retrying in 2s [Retry 2/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/open-web-math/open-web-math/resolve/fde8ef8de2300f5e778f56261843dab89f230815/data/train-00000-of-00114-5a023365406cb9c4.parquet
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/open-web-math/open-web-math/resolve/fde8ef8de2300f5e778f56261843dab89f230815/data/train-00000-of-00114-5a023365406cb9c4.parquet
+Retrying in 2s [Retry 2/5].
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - Retrying in 2s [Retry 2/5].
+HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00000-of-00041.parquet
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - HTTP Error 504 thrown while requesting GET https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00000-of-00041.parquet
+Retrying in 2s [Retry 2/5].
+12/01/2025 19:54:21 - WARNING - huggingface_hub.utils._http - Retrying in 2s [Retry 2/5].
+12/01/2025 19:54:35 - INFO - training.fm_trainer - Step 10: loss=12.7079, lr=0.00e+00, step_time=1243.1ms
+12/01/2025 19:54:45 - INFO - training.fm_trainer - Step 20: loss=11.8875, lr=0.00e+00, step_time=944.1ms
+12/01/2025 19:54:54 - INFO - training.fm_trainer - Step 30: loss=10.6503, lr=0.00e+00, step_time=950.2ms
+12/01/2025 19:55:04 - INFO - training.fm_trainer - Step 40: loss=11.2861, lr=6.00e-07, step_time=939.9ms
+12/01/2025 19:55:13 - INFO - training.fm_trainer - Step 50: loss=10.3460, lr=6.00e-07, step_time=935.4ms
+12/01/2025 19:55:23 - INFO - training.fm_trainer - Step 60: loss=16.0288, lr=6.00e-07, step_time=953.3ms
+12/01/2025 19:55:33 - INFO - training.fm_trainer - Step 70: loss=10.7631, lr=1.20e-06, step_time=948.9ms
+12/01/2025 19:55:42 - INFO - training.fm_trainer - Step 80: loss=10.3165, lr=1.20e-06, step_time=945.9ms
+12/01/2025 19:55:52 - INFO - training.fm_trainer - Step 90: loss=10.4610, lr=1.20e-06, step_time=944.4ms
+12/01/2025 19:56:01 - INFO - training.fm_trainer - Step 100: loss=11.4328, lr=1.80e-06, step_time=934.4ms
+12/01/2025 19:56:11 - INFO - training.fm_trainer - Step 110: loss=13.3297, lr=1.80e-06, step_time=936.2ms
+12/01/2025 19:56:20 - INFO - training.fm_trainer - Step 120: loss=10.8656, lr=1.80e-06, step_time=942.2ms
+12/01/2025 19:56:30 - INFO - training.fm_trainer - Step 130: loss=10.9120, lr=2.40e-06, step_time=950.3ms
+12/01/2025 19:56:40 - INFO - training.fm_trainer - Step 140: loss=14.8420, lr=2.40e-06, step_time=934.5ms
+12/01/2025 19:56:49 - INFO - training.fm_trainer - Step 150: loss=8.2855, lr=2.40e-06, step_time=946.2ms

@@ -1,0 +1,235 @@
+12/01/2025 20:02:50 - INFO - training.fm_trainer - Starting training
+12/01/2025 20:02:50 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 20:02:50 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 20:02:50 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/01/2025 20:02:50 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 20:02:50 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|████████████████████████████████████████████| 27838/27838 [00:00<00:00, 67301.54it/s]
+12/01/2025 20:03:07 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 20:03:07 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|████████████████████████████████████████████████| 114/114 [00:00<00:00, 59761.36it/s]
+12/01/2025 20:03:09 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 20:03:09 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/01/2025 20:03:11 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/01/2025 20:03:11 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|██████████████████████████████████████████████████| 41/41 [00:00<00:00, 58771.86it/s]
+12/01/2025 20:03:13 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 20:03:13 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|██████████████████████████████████████████████████| 53/53 [00:00<00:00, 61869.78it/s]
+Resolving data files: 100%|██████████████████████████████████████████████████| 53/53 [00:00<00:00, 64961.46it/s]
+12/01/2025 20:03:14 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/01/2025 20:03:14 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████| 144/144 [00:00<00:00, 68424.13it/s]
+12/01/2025 20:03:17 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 20:03:17 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████| 310/310 [00:00<00:00, 70981.23it/s]
+12/01/2025 20:03:18 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 20:03:18 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████| 208/208 [00:00<00:00, 71188.51it/s]
+12/01/2025 20:03:20 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 20:03:20 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████| 110/110 [00:00<00:00, 67779.26it/s]
+12/01/2025 20:03:22 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 20:03:22 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/01/2025 20:03:22 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/01/2025 20:08:29 - INFO - training.fm_trainer - Step 10/210000 (0.00%): loss=11.6781, lr=0.00e+00, step_time=1144.7ms, ETA 2d 18h
+12/01/2025 20:08:39 - INFO - training.fm_trainer - Step 20/210000 (0.01%): loss=12.8713, lr=0.00e+00, step_time=942.8ms, ETA 2d 17h
+12/01/2025 20:08:49 - INFO - training.fm_trainer - Step 30/210000 (0.01%): loss=15.7197, lr=0.00e+00, step_time=952.9ms, ETA 2d 16h
+12/01/2025 20:08:58 - INFO - training.fm_trainer - Step 40/210000 (0.02%): loss=10.9122, lr=6.00e-07, step_time=939.9ms, ETA 2d 15h
+12/01/2025 20:09:08 - INFO - training.fm_trainer - Step 50/210000 (0.02%): loss=10.8120, lr=6.00e-07, step_time=937.4ms, ETA 2d 14h
+12/01/2025 20:09:17 - INFO - training.fm_trainer - Step 60/210000 (0.03%): loss=10.8600, lr=6.00e-07, step_time=953.1ms, ETA 2d 13h
+12/01/2025 20:09:27 - INFO - training.fm_trainer - Step 70/210000 (0.03%): loss=16.2583, lr=1.20e-06, step_time=952.1ms, ETA 2d 13h
+12/01/2025 20:09:37 - INFO - training.fm_trainer - Step 80/210000 (0.04%): loss=11.9291, lr=1.20e-06, step_time=947.4ms, ETA 2d 12h
+12/01/2025 20:09:46 - INFO - training.fm_trainer - Step 90/210000 (0.04%): loss=10.3997, lr=1.20e-06, step_time=945.5ms, ETA 2d 12h
+12/01/2025 20:09:55 - INFO - training.fm_trainer - Step 100/210000 (0.05%): loss=11.7500, lr=1.80e-06, step_time=934.1ms, ETA 2d 11h
+12/01/2025 20:10:05 - INFO - training.fm_trainer - Step 110/210000 (0.05%): loss=10.7107, lr=1.80e-06, step_time=936.4ms, ETA 2d 11h
+12/01/2025 20:10:15 - INFO - training.fm_trainer - Step 120/210000 (0.06%): loss=12.4656, lr=1.80e-06, step_time=940.4ms, ETA 2d 10h
+12/01/2025 20:10:25 - INFO - training.fm_trainer - Step 130/210000 (0.06%): loss=13.5147, lr=2.40e-06, step_time=948.9ms, ETA 2d 10h
+12/01/2025 20:10:34 - INFO - training.fm_trainer - Step 140/210000 (0.07%): loss=10.7634, lr=2.40e-06, step_time=936.9ms, ETA 2d 9h
+12/01/2025 20:10:44 - INFO - training.fm_trainer - Step 150/210000 (0.07%): loss=11.2171, lr=2.40e-06, step_time=945.9ms, ETA 2d 9h
+12/01/2025 20:10:53 - INFO - training.fm_trainer - Step 160/210000 (0.08%): loss=11.7072, lr=3.00e-06, step_time=965.9ms, ETA 2d 9h
+12/01/2025 20:11:03 - INFO - training.fm_trainer - Step 170/210000 (0.08%): loss=17.1186, lr=3.00e-06, step_time=940.5ms, ETA 2d 9h
+12/01/2025 20:11:12 - INFO - training.fm_trainer - Step 180/210000 (0.09%): loss=15.0827, lr=3.00e-06, step_time=949.9ms, ETA 2d 9h
+12/01/2025 20:11:22 - INFO - training.fm_trainer - Step 190/210000 (0.09%): loss=16.8070, lr=3.00e-06, step_time=969.3ms, ETA 2d 9h
+Traceback (most recent call last):
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 283, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 352, in train
+    loss = self.train_step(batch)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 303, in train_step
+    logits, loss = self.model(
+                   ~~~~~~~~~~^
+        input_ids=input_ids,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        training_mode="pretrain",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 851, in forward
+    output = self._fsdp_wrapped_module(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 819, in forward
+    return model_forward(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 807, in __call__
+    return convert_to_fp32(self.model_forward(*args, **kwargs))
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+    return func(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+    hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+    hidden_states = self.layers(
+        hidden_states,
+    ...<2 lines>...
+        position_embeddings=position_embeddings,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+    input = module(*splat(input), **broadcasted_inputs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 837, in forward
+    args, kwargs = _pre_forward(
+                   ~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        kwargs,
+        ^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 382, in _pre_forward
+    unshard_fn(state, handle)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 430, in _pre_forward_unshard
+    _prefetch_handle(state, handle, _PrefetchMode.FORWARD)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 1229, in _prefetch_handle
+    _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 299, in _unshard
+    event.synchronize()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/cuda/streams.py", line 231, in synchronize
+    super().synchronize()
+    ~~~~~~~~~~~~~~~~~~~^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/train_h100.py", line 283, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 352, in train
+[rank0]:     loss = self.train_step(batch)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/training/fm_trainer.py", line 303, in train_step
+[rank0]:     logits, loss = self.model(
+[rank0]:                    ~~~~~~~~~~^
+[rank0]:         input_ids=input_ids,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^
+[rank0]:     ...<2 lines>...
+[rank0]:         training_mode="pretrain",
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 851, in forward
+[rank0]:     output = self._fsdp_wrapped_module(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 819, in forward
+[rank0]:     return model_forward(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/utils/operations.py", line 807, in __call__
+[rank0]:     return convert_to_fp32(self.model_forward(*args, **kwargs))
+[rank0]:                            ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/amp/autocast_mode.py", line 44, in decorate_autocast
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 522, in forward
+[rank0]:     hidden_states = self.model(input_ids=x_t, t=t, attention_mask=attention_mask)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_fm.py", line 381, in forward
+[rank0]:     hidden_states = self.layers(
+[rank0]:         hidden_states,
+[rank0]:     ...<2 lines>...
+[rank0]:         position_embeddings=position_embeddings,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching/CoDA/flow-matching-qwen/FlowMatchingLM/modeling_utils.py", line 37, in forward
+[rank0]:     input = module(*splat(input), **broadcasted_inputs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 837, in forward
+[rank0]:     args, kwargs = _pre_forward(
+[rank0]:                    ~~~~~~~~~~~~^
+[rank0]:         self,
+[rank0]:         ^^^^^
+[rank0]:     ...<4 lines>...
+[rank0]:         kwargs,
+[rank0]:         ^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 382, in _pre_forward
+[rank0]:     unshard_fn(state, handle)
+[rank0]:     ~~~~~~~~~~^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 430, in _pre_forward_unshard
+[rank0]:     _prefetch_handle(state, handle, _PrefetchMode.FORWARD)
+[rank0]:     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 1229, in _prefetch_handle
+[rank0]:     _unshard(state, handle, state._unshard_stream, state._pre_unshard_stream)
+[rank0]:     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_runtime_utils.py", line 299, in _unshard
+[rank0]:     event.synchronize()
+[rank0]:     ~~~~~~~~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/cuda/streams.py", line 231, in synchronize
+[rank0]:     super().synchronize()
+[rank0]:     ~~~~~~~~~~~~~~~~~~~^^
+[rank0]: KeyboardInterrupt

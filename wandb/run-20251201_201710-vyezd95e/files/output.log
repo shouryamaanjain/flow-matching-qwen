@@ -1,0 +1,45 @@
+12/01/2025 20:17:11 - INFO - training.fm_trainer - Starting training
+12/01/2025 20:17:11 - INFO - training.fm_trainer -   Max steps: 210000
+12/01/2025 20:17:11 - INFO - training.fm_trainer -   Global batch size: 128
+12/01/2025 20:17:11 - INFO - training.fm_trainer -   Gradient accumulation steps: 16
+12/01/2025 20:17:11 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/01/2025 20:17:11 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████| 27838/27838 [00:00<00:00, 67085.81it/s]
+12/01/2025 20:17:29 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/01/2025 20:17:29 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 61672.99it/s]
+12/01/2025 20:17:31 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/01/2025 20:17:31 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/01/2025 20:17:33 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/01/2025 20:17:33 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 55742.78it/s]
+12/01/2025 20:17:35 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/01/2025 20:17:35 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 60987.14it/s]
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 62566.31it/s]
+12/01/2025 20:17:36 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/01/2025 20:17:36 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 70707.07it/s]
+12/01/2025 20:17:39 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/01/2025 20:17:39 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 62940.95it/s]
+12/01/2025 20:17:41 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/01/2025 20:17:41 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 69052.97it/s]
+12/01/2025 20:17:42 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/01/2025 20:17:42 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 66480.32it/s]
+12/01/2025 20:17:44 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/01/2025 20:17:44 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/01/2025 20:17:44 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/01/2025 20:20:53 - INFO - training.fm_trainer - Step 10/210000 (0.00%): loss=14.4337, lr=0.00e+00, step_time=2105.1ms, ETA 5d 2h
+12/01/2025 20:21:11 - INFO - training.fm_trainer - Step 20/210000 (0.01%): loss=15.0776, lr=6.00e-07, step_time=1826.3ms, ETA 5d 1h
+12/01/2025 20:21:30 - INFO - training.fm_trainer - Step 30/210000 (0.01%): loss=14.8147, lr=6.00e-07, step_time=1845.5ms, ETA 4d 23h
+12/01/2025 20:21:48 - INFO - training.fm_trainer - Step 40/210000 (0.02%): loss=15.3653, lr=1.20e-06, step_time=1828.6ms, ETA 4d 22h
+12/01/2025 20:22:07 - INFO - training.fm_trainer - Step 50/210000 (0.02%): loss=10.2681, lr=1.80e-06, step_time=1850.6ms, ETA 4d 21h
+12/01/2025 20:22:25 - INFO - training.fm_trainer - Step 60/210000 (0.03%): loss=12.5573, lr=1.80e-06, step_time=1823.6ms, ETA 4d 20h
+12/01/2025 20:22:44 - INFO - training.fm_trainer - Step 70/210000 (0.03%): loss=10.9025, lr=2.40e-06, step_time=1829.3ms, ETA 4d 19h
