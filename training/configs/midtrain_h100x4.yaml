@@ -1,0 +1,52 @@
+# Flow Matching LM Mid-training Configuration
+# Optimized for 4x H100 (80GB) GPUs
+# Mid-training focuses on code data for coding capability
+
+# Model Configuration
+model_name_or_path: "./checkpoints/flow_matching_qwen_1.7b/checkpoint-210000"  # Load pretrained
+mask_token_id: 151669
+
+# Discrete Flow Matching Parameters
+scheduler_type: "polynomial_convex"
+scheduler_n: 1.0
+sampling_eps: 0.001
+
+# Training Configuration
+max_steps: 50000                      # 50K steps for mid-training (same as CoDA)
+global_batch_size: 128
+per_device_batch_size: 8
+gradient_accumulation_steps: 4
+sequence_length: 8192
+
+# Optimizer Configuration
+learning_rate: 1.0e-4                 # Lower LR for mid-training
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1.0e-8
+max_grad_norm: 1.0
+
+# Learning Rate Scheduler
+lr_scheduler_type: "cosine"
+warmup_steps: 500                     # Shorter warmup for mid-training
+
+# Checkpointing
+checkpoint_dir: "./checkpoints/flow_matching_qwen_1.7b_midtrain"
+save_steps: 2500
+resume_from_checkpoint: null
+
+# Logging
+logging_steps: 10
+wandb_project: "flow-matching-lm"
+run_name: "fm-qwen-1.7b-midtrain"
+
+# Distributed Training
+mixed_precision: "bf16"
+
+# Data (placeholder - replace with actual code-focused dataset)
+dataset_name: null
+data_dir: null
+
+# Miscellaneous
+seed: 42
+

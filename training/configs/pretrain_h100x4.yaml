@@ -1,0 +1,97 @@
+# Flow Matching LM Pre-training Configuration
+# Optimized for 4x H100 (80GB) GPUs
+
+# Model Configuration
+model_name_or_path: "Qwen/Qwen3-1.7B"
+mask_token_id: 151669
+
+# Discrete Flow Matching Parameters
+scheduler_type: "polynomial_convex"  # Options: polynomial_convex, linear, cosine
+scheduler_n: 1.0                      # Polynomial degree (1.0 = linear rate)
+sampling_eps: 0.001                   # Minimum t value (avoid t=0 instability)
+
+# Training Configuration
+max_steps: 210000                     # Same as CoDA pre-training
+global_batch_size: 128                # Total batch size across all GPUs
+per_device_batch_size: 2              # 2 × 4 GPUs × 16 steps = 128 effective batch
+gradient_accumulation_steps: 32      # Adjusted to keep global batch constant
+sequence_length: 8192                 # Context length
+
+# Optimizer Configuration
+learning_rate: 3.0e-4                 # Peak learning rate
+weight_decay: 0.01                    # AdamW weight decay
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1.0e-8
+max_grad_norm: 1.0                    # Gradient clipping
+
+# Learning Rate Scheduler
+lr_scheduler_type: "cosine"           # Cosine annealing
+warmup_steps: 2000                    # Linear warmup steps
+
+# Checkpointing
+checkpoint_dir: "./checkpoints/flow_matching_qwen_1.7b"
+save_steps: 500                      # Save every 500 steps for finer recovery points
+save_total_limit: 2                   # Only keep latest 2 checkpoints (saves disk space!)
+resume_from_checkpoint: null  # Start fresh
+
+# Logging
+logging_steps: 10                     # Log every 10 steps
+wandb_project: "flow-matching-lm"
+run_name: "fm-qwen-1.7b-pretrain"
+
+# Distributed Training
+mixed_precision: "bf16"               # Use bfloat16 on H100
+
+# Pre-training Data (token-balanced to CoDA Table 1)
+# Total: ~180B tokens
+# Datasets resolve to parquet/arrow sources (no legacy scripts)
+datasets:
+  - name: dclm-baseline
+    path: mlfoundations/dclm-baseline-1.0
+    weight: 60.17  # 60.17B tokens
+    
+  - name: openwebmath
+    path: open-web-math/open-web-math
+    weight: 12.98  # 12.98B tokens
+    
+  - name: arxiv-summarization
+    path: ccdv/arxiv-summarization
+    weight: 9.18   # ~9B tokens
+    
+  - name: wikipedia-en
+    path: wikimedia/wikipedia
+    subset: "20231101.en"
+    weight: 5.41   # 5.41B tokens
+    
+  - name: mathpile
+    path: zwhe99/mathpile-text
+    weight: 3.24   # ~3B tokens
+
+# ===========================================================================
+# CODE DATASETS OPTIONS
+# ===========================================================================
+# 
+# RECOMMENDED: The Stack v1 (bigcode/the-stack-dedup)
+# - Contains actual code content directly in 'content' field
+# - No AWS credentials needed, just HuggingFace login
+# - ~200B tokens total
+# - Enable with: --include_stack_v1 or set include_stack_v1: true
+#
+# ALTERNATIVE: The Stack v2 (bigcode/the-stack-v2)  
+# - Only contains file IDs, NOT actual code content
+# - Requires AWS credentials to download from Software Heritage S3
+# - ~900B tokens but much harder to use
+# - Enable with: --include_stack_v2 or set include_stack_v2: true
+# ===========================================================================
+
+include_stack_v1: true   # ENABLED: Stack v1 with actual code content (~95B tokens)
+include_stack_v2: false  # Disabled: Requires AWS credentials for content download
+
+# Data loading configuration
+num_workers: 0
+streaming: true
+
+# Miscellaneous
+seed: 42
+

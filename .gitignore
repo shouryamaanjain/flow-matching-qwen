@@ -1,0 +1,34 @@
+# Checkpoints and model weights
+checkpoints/
+
+# Weights & Biases logs
+wandb/
+
+# Tokenizer cache
+tokenizer_cache/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment
+.env
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
