@@ -1,0 +1,243 @@
+12/02/2025 18:18:44 - INFO - training.fm_trainer - Starting training
+12/02/2025 18:18:44 - INFO - training.fm_trainer -   Max steps: 210000
+12/02/2025 18:18:44 - INFO - training.fm_trainer -   Global batch size: 128
+12/02/2025 18:18:44 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/02/2025 18:18:44 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 18:18:44 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████| 27838/27838 [00:06<00:00, 4514.42it/s]
+12/02/2025 18:19:46 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 18:19:47 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 346.67it/s]
+12/02/2025 18:19:49 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/02/2025 18:19:49 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/02/2025 18:19:50 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/02/2025 18:19:50 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 41.65it/s]
+12/02/2025 18:19:53 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/02/2025 18:19:53 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 802.00it/s]
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 27700.70it/s]
+12/02/2025 18:19:55 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/02/2025 18:19:55 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 249.81it/s]
+12/02/2025 18:19:58 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/02/2025 18:19:58 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 16185.15it/s]
+12/02/2025 18:20:01 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/02/2025 18:20:01 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 37184.18it/s]
+12/02/2025 18:20:03 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/02/2025 18:20:03 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 71243.58it/s]
+12/02/2025 18:20:05 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/02/2025 18:20:05 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/02/2025 18:20:05 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/02/2025 18:20:33 - INFO - training.fm_trainer - Step 10/210000 (0.00%): loss=16.2436, lr=0.00e+00, step_time=1866.1ms, ETA 4d 12h
+12/02/2025 18:20:52 - INFO - training.fm_trainer - Step 20/210000 (0.01%): loss=12.1501, lr=0.00e+00, step_time=1831.5ms, ETA 4d 12h
+12/02/2025 18:21:10 - INFO - training.fm_trainer - Step 30/210000 (0.01%): loss=13.7199, lr=0.00e+00, step_time=1887.5ms, ETA 4d 12h
+12/02/2025 18:21:29 - INFO - training.fm_trainer - Step 40/210000 (0.02%): loss=13.0522, lr=6.00e-07, step_time=1842.0ms, ETA 4d 12h
+12/02/2025 18:21:48 - INFO - training.fm_trainer - Step 50/210000 (0.02%): loss=11.5925, lr=6.00e-07, step_time=1859.9ms, ETA 4d 12h
+12/02/2025 18:21:48 - INFO - training.fm_trainer - Running evaluation on 50 batches...
+12/02/2025 18:21:48 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 18:21:48 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████| 27838/27838 [00:06<00:00, 4322.74it/s]
+Traceback (most recent call last):
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 312, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 308, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 486, in train
+    self.evaluate()
+    ~~~~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 371, in evaluate
+    for batch_idx, batch in enumerate(eval_dataloader):
+                            ~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+    next_batch, next_batch_info = self._fetch_batches(main_iterator)
+                                  ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+    batches.append(next(iterator))
+                   ~~~~^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+    data = self._next_data()
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+    data.append(next(self.dataset_iter))
+                ~~~~^^^^^^^^^^^^^^^^^^^
+  File "/workspace/flow-matching-qwen/data/data_loader.py", line 416, in __iter__
+    dataset = self._get_dataset()
+  File "/workspace/flow-matching-qwen/data/data_loader.py", line 364, in _get_dataset
+    self._dataset = create_pretrain_mixture(
+                    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self.tokenizer,
+        ^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        self.seed + self.worker_id,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/workspace/flow-matching-qwen/data/data_loader.py", line 300, in create_pretrain_mixture
+    ds = load_single_dataset(config, tokenizer, max_length)
+  File "/workspace/flow-matching-qwen/data/data_loader.py", line 197, in load_single_dataset
+    ds = load_dataset(
+        config.path,
+        **load_kwargs,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 2587, in load_dataset
+    builder_instance = load_dataset_builder(
+        path=path,
+    ...<12 lines>...
+        **config_kwargs,
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 2259, in load_dataset_builder
+    dataset_module = dataset_module_factory(
+        path,
+    ...<8 lines>...
+        _require_custom_configs=bool(config_kwargs),
+    )
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1892, in dataset_module_factory
+    ).get_module()
+      ~~~~~~~~~~^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1270, in get_module
+    module_name, default_builder_kwargs = infer_module_for_data_files(
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        data_files=data_files,
+        ^^^^^^^^^^^^^^^^^^^^^^
+        path=self.name,
+        ^^^^^^^^^^^^^^^
+        download_config=self.download_config,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 590, in infer_module_for_data_files
+    split: infer_module_for_data_files_list(data_files_list, download_config=download_config)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 515, in infer_module_for_data_files_list
+    extensions_counter = Counter(
+        ("." + suffix.lower(), xbasename(filepath) in ("metadata.jsonl", "metadata.csv"))
+        for filepath in data_files_list[: config.DATA_FILES_MAX_NUMBER_FOR_MODULE_INFERENCE]
+        for suffix in xbasename(filepath).split(".")[1:]
+    )
+  File "/root/miniconda3/lib/python3.13/collections/__init__.py", line 611, in __init__
+    self.update(iterable, **kwds)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/collections/__init__.py", line 703, in update
+    _count_elements(self, iterable)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 516, in <genexpr>
+    ("." + suffix.lower(), xbasename(filepath) in ("metadata.jsonl", "metadata.csv"))
+                           ~~~~~~~~~^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/datasets/utils/file_utils.py", line 948, in xbasename
+    return posixpath.basename(a)
+           ~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen posixpath>", line 166, in basename
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 312, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 308, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 486, in train
+[rank0]:     self.evaluate()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 371, in evaluate
+[rank0]:     for batch_idx, batch in enumerate(eval_dataloader):
+[rank0]:                             ~~~~~~~~~^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 866, in __iter__
+[rank0]:     next_batch, next_batch_info = self._fetch_batches(main_iterator)
+[rank0]:                                   ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/data_loader.py", line 820, in _fetch_batches
+[rank0]:     batches.append(next(iterator))
+[rank0]:                    ~~~~^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
+[rank0]:     data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/data/_utils/fetch.py", line 33, in fetch
+[rank0]:     data.append(next(self.dataset_iter))
+[rank0]:                 ~~~~^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/workspace/flow-matching-qwen/data/data_loader.py", line 416, in __iter__
+[rank0]:     dataset = self._get_dataset()
+[rank0]:   File "/workspace/flow-matching-qwen/data/data_loader.py", line 364, in _get_dataset
+[rank0]:     self._dataset = create_pretrain_mixture(
+[rank0]:                     ~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         self.tokenizer,
+[rank0]:         ^^^^^^^^^^^^^^^
+[rank0]:     ...<3 lines>...
+[rank0]:         self.seed + self.worker_id,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/workspace/flow-matching-qwen/data/data_loader.py", line 300, in create_pretrain_mixture
+[rank0]:     ds = load_single_dataset(config, tokenizer, max_length)
+[rank0]:   File "/workspace/flow-matching-qwen/data/data_loader.py", line 197, in load_single_dataset
+[rank0]:     ds = load_dataset(
+[rank0]:         config.path,
+[rank0]:         **load_kwargs,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 2587, in load_dataset
+[rank0]:     builder_instance = load_dataset_builder(
+[rank0]:         path=path,
+[rank0]:     ...<12 lines>...
+[rank0]:         **config_kwargs,
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 2259, in load_dataset_builder
+[rank0]:     dataset_module = dataset_module_factory(
+[rank0]:         path,
+[rank0]:     ...<8 lines>...
+[rank0]:         _require_custom_configs=bool(config_kwargs),
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1892, in dataset_module_factory
+[rank0]:     ).get_module()
+[rank0]:       ~~~~~~~~~~^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 1270, in get_module
+[rank0]:     module_name, default_builder_kwargs = infer_module_for_data_files(
+[rank0]:                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         data_files=data_files,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:         path=self.name,
+[rank0]:         ^^^^^^^^^^^^^^^
+[rank0]:         download_config=self.download_config,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 590, in infer_module_for_data_files
+[rank0]:     split: infer_module_for_data_files_list(data_files_list, download_config=download_config)
+[rank0]:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 515, in infer_module_for_data_files_list
+[rank0]:     extensions_counter = Counter(
+[rank0]:         ("." + suffix.lower(), xbasename(filepath) in ("metadata.jsonl", "metadata.csv"))
+[rank0]:         for filepath in data_files_list[: config.DATA_FILES_MAX_NUMBER_FOR_MODULE_INFERENCE]
+[rank0]:         for suffix in xbasename(filepath).split(".")[1:]
+[rank0]:     )
+[rank0]:   File "/root/miniconda3/lib/python3.13/collections/__init__.py", line 611, in __init__
+[rank0]:     self.update(iterable, **kwds)
+[rank0]:     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/collections/__init__.py", line 703, in update
+[rank0]:     _count_elements(self, iterable)
+[rank0]:     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/load.py", line 516, in <genexpr>
+[rank0]:     ("." + suffix.lower(), xbasename(filepath) in ("metadata.jsonl", "metadata.csv"))
+[rank0]:                            ~~~~~~~~~^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/datasets/utils/file_utils.py", line 948, in xbasename
+[rank0]:     return posixpath.basename(a)
+[rank0]:            ~~~~~~~~~~~~~~~~~~^^^
+[rank0]:   File "<frozen posixpath>", line 166, in basename
+[rank0]: KeyboardInterrupt

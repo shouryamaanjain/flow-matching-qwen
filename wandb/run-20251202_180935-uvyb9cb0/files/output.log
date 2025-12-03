@@ -1,0 +1,138 @@
+12/02/2025 18:09:37 - INFO - training.fm_trainer - Starting training
+12/02/2025 18:09:37 - INFO - training.fm_trainer -   Max steps: 210000
+12/02/2025 18:09:37 - INFO - training.fm_trainer -   Global batch size: 128
+12/02/2025 18:09:37 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/02/2025 18:09:37 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 18:09:37 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████| 27838/27838 [00:05<00:00, 4801.62it/s]
+12/02/2025 18:10:41 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 18:10:41 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 1119.11it/s]
+12/02/2025 18:10:43 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/02/2025 18:10:43 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/02/2025 18:10:44 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/02/2025 18:10:44 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 130.98it/s]
+12/02/2025 18:10:47 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/02/2025 18:10:47 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 217.14it/s]
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 220972.28it/s]
+12/02/2025 18:10:49 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/02/2025 18:10:49 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 355.43it/s]
+12/02/2025 18:10:53 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/02/2025 18:10:53 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 15873.36it/s]
+12/02/2025 18:10:55 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/02/2025 18:10:55 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 23703.72it/s]
+12/02/2025 18:10:58 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/02/2025 18:10:58 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 63401.60it/s]
+12/02/2025 18:11:00 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/02/2025 18:11:00 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/02/2025 18:11:00 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/02/2025 18:11:30 - INFO - training.fm_trainer - Step 10/210000 (0.00%): loss=8.5532, lr=0.00e+00, step_time=1866.4ms, ETA 4d 12h
+12/02/2025 18:11:49 - INFO - training.fm_trainer - Step 20/210000 (0.01%): loss=10.4711, lr=0.00e+00, step_time=2044.3ms, ETA 4d 13h
+12/02/2025 18:12:07 - INFO - training.fm_trainer - Step 30/210000 (0.01%): loss=10.6258, lr=0.00e+00, step_time=1842.1ms, ETA 4d 13h
+12/02/2025 18:12:26 - INFO - training.fm_trainer - Step 40/210000 (0.02%): loss=11.4913, lr=6.00e-07, step_time=1823.9ms, ETA 4d 13h
+12/02/2025 18:12:44 - INFO - training.fm_trainer - Step 50/210000 (0.02%): loss=11.3246, lr=6.00e-07, step_time=1840.6ms, ETA 4d 13h
+12/02/2025 18:12:44 - INFO - training.fm_trainer - Running evaluation on 50 batches...
+12/02/2025 18:12:44 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 18:12:44 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████| 27838/27838 [00:06<00:00, 4557.15it/s]
+12/02/2025 18:13:39 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 18:13:39 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 1162.69it/s]
+12/02/2025 18:13:41 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/02/2025 18:13:41 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+12/02/2025 18:13:42 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/02/2025 18:13:42 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 95.45it/s]
+12/02/2025 18:13:43 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/02/2025 18:13:43 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 697.53it/s]
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 84267.67it/s]
+12/02/2025 18:13:45 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/02/2025 18:13:45 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Resolving data files: 100%|███████████████████████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 410.77it/s]
+12/02/2025 18:13:47 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/02/2025 18:13:47 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 15851.68it/s]
+12/02/2025 18:13:49 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/02/2025 18:13:49 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 20666.49it/s]
+12/02/2025 18:13:52 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/02/2025 18:13:52 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 24442.33it/s]
+12/02/2025 18:13:53 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/02/2025 18:13:53 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/02/2025 18:13:53 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/02/2025 18:14:22 - INFO - training.fm_trainer - Eval Step 50: loss=11.9407, ppl=153383.22
+12/02/2025 18:14:41 - INFO - training.fm_trainer - Step 60/210000 (0.03%): loss=12.9370, lr=6.00e-07, step_time=1830.1ms, ETA 4d 12h
+12/02/2025 18:15:00 - INFO - training.fm_trainer - Step 70/210000 (0.03%): loss=14.3588, lr=1.20e-06, step_time=1824.4ms, ETA 4d 12h
+12/02/2025 18:15:18 - INFO - training.fm_trainer - Step 80/210000 (0.04%): loss=12.6462, lr=1.20e-06, step_time=1848.9ms, ETA 4d 12h
+12/02/2025 18:15:37 - INFO - training.fm_trainer - Step 90/210000 (0.04%): loss=18.1990, lr=1.20e-06, step_time=1907.5ms, ETA 4d 12h
+12/02/2025 18:15:55 - INFO - training.fm_trainer - Step 100/210000 (0.05%): loss=11.0344, lr=1.80e-06, step_time=1836.0ms, ETA 4d 12h
+12/02/2025 18:15:55 - INFO - training.fm_trainer - Running evaluation on 50 batches...
+12/02/2025 18:16:22 - INFO - training.fm_trainer - Eval Step 100: loss=11.6029, ppl=109415.96
+12/02/2025 18:16:40 - INFO - training.fm_trainer - Step 110/210000 (0.05%): loss=17.3044, lr=1.80e-06, step_time=1858.7ms, ETA 4d 12h
+12/02/2025 18:16:59 - INFO - training.fm_trainer - Step 120/210000 (0.06%): loss=9.2016, lr=1.80e-06, step_time=1886.5ms, ETA 4d 12h
+Traceback (most recent call last):
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 312, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 308, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 464, in train
+    self.accelerator.clip_grad_norm_(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self.model.parameters(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        self.config.max_grad_norm
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/accelerator.py", line 2979, in clip_grad_norm_
+    return model.clip_grad_norm_(max_norm, norm_type)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 1194, in clip_grad_norm_
+    grad.mul_(clip_coef_clamped.to(grad.device, grad.dtype))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 312, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 308, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 464, in train
+[rank0]:     self.accelerator.clip_grad_norm_(
+[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         self.model.parameters(),
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:         self.config.max_grad_norm
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/accelerator.py", line 2979, in clip_grad_norm_
+[rank0]:     return model.clip_grad_norm_(max_norm, norm_type)
+[rank0]:            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+[rank0]:     return func(*args, **kwargs)
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py", line 1194, in clip_grad_norm_
+[rank0]:     grad.mul_(clip_coef_clamped.to(grad.device, grad.dtype))
+[rank0]:     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

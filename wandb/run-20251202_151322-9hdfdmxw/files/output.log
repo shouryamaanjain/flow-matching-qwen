@@ -1,0 +1,649 @@
+12/02/2025 15:13:23 - INFO - training.fm_trainer - Starting training
+12/02/2025 15:13:23 - INFO - training.fm_trainer -   Max steps: 210000
+12/02/2025 15:13:23 - INFO - training.fm_trainer -   Global batch size: 128
+12/02/2025 15:13:23 - INFO - training.fm_trainer -   Gradient accumulation steps: 32
+12/02/2025 15:13:23 - INFO - data.data_loader - Including The Stack v1 datasets (RECOMMENDED):
+- Contains actual code content directly
+- No AWS credentials needed
+- Just login with: huggingface-cli login
+See: https://huggingface.co/datasets/bigcode/the-stack-dedup
+12/02/2025 15:13:23 - INFO - data.data_loader - Loading dataset: dclm-baseline from mlfoundations/dclm-baseline-1.0
+Downloading readme: 7.46kB [00:00, 5.77MB/s]
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 27838/27838 [00:06<00:00, 4528.42it/s]
+12/02/2025 15:14:22 - INFO - data.data_loader - ✓ Loaded dclm-baseline with weight 60.17
+12/02/2025 15:14:22 - INFO - data.data_loader - Loading dataset: openwebmath from open-web-math/open-web-math
+Downloading readme: 4.80kB [00:00, 3.37MB/s]
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████████████████| 114/114 [00:00<00:00, 1258.58it/s]
+12/02/2025 15:14:24 - INFO - data.data_loader - ✓ Loaded openwebmath with weight 12.98
+12/02/2025 15:14:24 - INFO - data.data_loader - Loading dataset: arxiv-summarization from ccdv/arxiv-summarization
+Downloading readme: 3.96kB [00:00, 6.11MB/s]
+12/02/2025 15:14:26 - INFO - data.data_loader - ✓ Loaded arxiv-summarization with weight 9.18
+12/02/2025 15:14:26 - INFO - data.data_loader - Loading dataset: wikipedia-en from wikimedia/wikipedia
+Downloading readme: 131kB [00:00, 30.3MB/s]
+Resolving data files: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 41/41 [00:00<00:00, 83.77it/s]
+12/02/2025 15:14:28 - INFO - data.data_loader - ✓ Loaded wikipedia-en with weight 5.41
+12/02/2025 15:14:28 - INFO - data.data_loader - Loading dataset: mathpile from zwhe99/mathpile-text
+Downloading readme: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 392/392 [00:00<00:00, 1.54MB/s]
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 524.12it/s]
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 53/53 [00:00<00:00, 20070.25it/s]
+12/02/2025 15:14:30 - INFO - data.data_loader - ✓ Loaded mathpile with weight 3.24
+12/02/2025 15:14:30 - INFO - data.data_loader - Loading dataset: stack-v1-python from bigcode/the-stack-dedup
+Downloading readme: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 19.3k/19.3k [00:00<00:00, 33.7MB/s]
+Resolving data files: 100%|██████████████████████████████████████████████████████████████████████████████████████████████| 144/144 [00:00<00:00, 242.28it/s]
+12/02/2025 15:14:34 - INFO - data.data_loader - ✓ Loaded stack-v1-python with weight 50.75
+12/02/2025 15:14:34 - INFO - data.data_loader - Loading dataset: stack-v1-javascript from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 310/310 [00:00<00:00, 15886.54it/s]
+12/02/2025 15:14:36 - INFO - data.data_loader - ✓ Loaded stack-v1-javascript with weight 20.0
+12/02/2025 15:14:36 - INFO - data.data_loader - Loading dataset: stack-v1-java from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 208/208 [00:00<00:00, 16999.19it/s]
+12/02/2025 15:14:38 - INFO - data.data_loader - ✓ Loaded stack-v1-java with weight 15.0
+12/02/2025 15:14:38 - INFO - data.data_loader - Loading dataset: stack-v1-cpp from bigcode/the-stack-dedup
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████████████████████| 110/110 [00:00<00:00, 22345.79it/s]
+12/02/2025 15:14:40 - INFO - data.data_loader - ✓ Loaded stack-v1-cpp with weight 10.0
+12/02/2025 15:14:40 - INFO - data.data_loader - Creating mixture with 9 datasets
+12/02/2025 15:14:40 - INFO - data.data_loader - Sampling probabilities: {'dclm-baseline': 0.3222299576929256, 'openwebmath': 0.06951212981309914, 'arxiv-summarization': 0.04916189150109784, 'wikipedia-en': 0.028972312965243937, 'mathpile': 0.01735125582391689, 'stack-v1-python': 0.27178278798264877, 'stack-v1-javascript': 0.10710651743158572, 'stack-v1-java': 0.08032988807368929, 'stack-v1-cpp': 0.05355325871579286}
+12/02/2025 15:15:09 - INFO - training.fm_trainer - Step 10/210000 (0.00%): loss=13.2729, lr=0.00e+00, step_time=1866.3ms, ETA 4d 12h
+12/02/2025 15:15:28 - INFO - training.fm_trainer - Step 20/210000 (0.01%): loss=11.6043, lr=0.00e+00, step_time=1835.5ms, ETA 4d 12h
+12/02/2025 15:15:46 - INFO - training.fm_trainer - Step 30/210000 (0.01%): loss=11.5403, lr=0.00e+00, step_time=1871.8ms, ETA 4d 12h
+12/02/2025 15:16:05 - INFO - training.fm_trainer - Step 40/210000 (0.02%): loss=8.7325, lr=6.00e-07, step_time=1852.7ms, ETA 4d 12h
+12/02/2025 15:16:23 - INFO - training.fm_trainer - Step 50/210000 (0.02%): loss=14.2286, lr=6.00e-07, step_time=1848.0ms, ETA 4d 12h
+12/02/2025 15:16:42 - INFO - training.fm_trainer - Step 60/210000 (0.03%): loss=12.0521, lr=6.00e-07, step_time=1820.9ms, ETA 4d 12h
+12/02/2025 15:17:01 - INFO - training.fm_trainer - Step 70/210000 (0.03%): loss=10.9344, lr=1.20e-06, step_time=1817.3ms, ETA 4d 12h
+12/02/2025 15:17:19 - INFO - training.fm_trainer - Step 80/210000 (0.04%): loss=10.1577, lr=1.20e-06, step_time=1859.2ms, ETA 4d 12h
+12/02/2025 15:17:37 - INFO - training.fm_trainer - Step 90/210000 (0.04%): loss=14.5252, lr=1.20e-06, step_time=1859.5ms, ETA 4d 12h
+12/02/2025 15:17:56 - INFO - training.fm_trainer - Step 100/210000 (0.05%): loss=12.6087, lr=1.80e-06, step_time=1824.5ms, ETA 4d 11h
+12/02/2025 15:18:14 - INFO - training.fm_trainer - Step 110/210000 (0.05%): loss=12.1087, lr=1.80e-06, step_time=1843.7ms, ETA 4d 11h
+12/02/2025 15:18:33 - INFO - training.fm_trainer - Step 120/210000 (0.06%): loss=10.2599, lr=1.80e-06, step_time=1846.3ms, ETA 4d 11h
+12/02/2025 15:18:51 - INFO - training.fm_trainer - Step 130/210000 (0.06%): loss=15.3145, lr=2.40e-06, step_time=1832.3ms, ETA 4d 11h
+12/02/2025 15:19:10 - INFO - training.fm_trainer - Step 140/210000 (0.07%): loss=12.6557, lr=2.40e-06, step_time=1837.0ms, ETA 4d 11h
+Token indices sequence length is longer than the specified maximum sequence length for this model (246929 > 131072). Running this sequence through the model will result in indexing errors
+12/02/2025 15:19:29 - INFO - training.fm_trainer - Step 150/210000 (0.07%): loss=11.4819, lr=2.40e-06, step_time=1868.3ms, ETA 4d 11h
+12/02/2025 15:19:47 - INFO - training.fm_trainer - Step 160/210000 (0.08%): loss=11.2011, lr=3.00e-06, grad_norm=19.67, step_time=1853.1ms, ETA 4d 11h
+12/02/2025 15:20:06 - INFO - training.fm_trainer - Step 170/210000 (0.08%): loss=10.7133, lr=3.00e-06, step_time=1818.1ms, ETA 4d 11h
+12/02/2025 15:20:24 - INFO - training.fm_trainer - Step 180/210000 (0.09%): loss=9.2036, lr=3.00e-06, step_time=1836.4ms, ETA 4d 11h
+12/02/2025 15:20:43 - INFO - training.fm_trainer - Step 190/210000 (0.09%): loss=10.7148, lr=3.00e-06, step_time=1842.2ms, ETA 4d 11h
+12/02/2025 15:21:01 - INFO - training.fm_trainer - Step 200/210000 (0.10%): loss=8.0185, lr=3.60e-06, step_time=1921.6ms, ETA 4d 11h
+12/02/2025 15:21:20 - INFO - training.fm_trainer - Step 210/210000 (0.10%): loss=6.2704, lr=3.60e-06, step_time=1857.5ms, ETA 4d 12h
+12/02/2025 15:21:39 - INFO - training.fm_trainer - Step 220/210000 (0.10%): loss=10.9273, lr=3.60e-06, step_time=1856.2ms, ETA 4d 12h
+12/02/2025 15:21:57 - INFO - training.fm_trainer - Step 230/210000 (0.11%): loss=14.9899, lr=4.20e-06, step_time=1821.3ms, ETA 4d 11h
+12/02/2025 15:22:16 - INFO - training.fm_trainer - Step 240/210000 (0.11%): loss=12.1052, lr=4.20e-06, step_time=1820.0ms, ETA 4d 11h
+12/02/2025 15:22:34 - INFO - training.fm_trainer - Step 250/210000 (0.12%): loss=11.2598, lr=4.20e-06, step_time=1812.1ms, ETA 4d 11h
+12/02/2025 15:22:53 - INFO - training.fm_trainer - Step 260/210000 (0.12%): loss=11.0919, lr=4.80e-06, step_time=1834.6ms, ETA 4d 11h
+12/02/2025 15:23:11 - INFO - training.fm_trainer - Step 270/210000 (0.13%): loss=14.1251, lr=4.80e-06, step_time=1837.0ms, ETA 4d 11h
+12/02/2025 15:23:30 - INFO - training.fm_trainer - Step 280/210000 (0.13%): loss=10.7435, lr=4.80e-06, step_time=1872.4ms, ETA 4d 11h
+12/02/2025 15:23:48 - INFO - training.fm_trainer - Step 290/210000 (0.14%): loss=10.4919, lr=5.40e-06, step_time=1827.7ms, ETA 4d 11h
+12/02/2025 15:24:07 - INFO - training.fm_trainer - Step 300/210000 (0.14%): loss=10.3299, lr=5.40e-06, step_time=1856.3ms, ETA 4d 11h
+12/02/2025 15:24:25 - INFO - training.fm_trainer - Step 310/210000 (0.15%): loss=12.0500, lr=5.40e-06, step_time=1838.2ms, ETA 4d 11h
+12/02/2025 15:24:44 - INFO - training.fm_trainer - Step 320/210000 (0.15%): loss=11.5505, lr=6.00e-06, grad_norm=2.45, step_time=1893.0ms, ETA 4d 11h
+12/02/2025 15:25:02 - INFO - training.fm_trainer - Step 330/210000 (0.16%): loss=10.3955, lr=6.00e-06, step_time=1832.2ms, ETA 4d 11h
+12/02/2025 15:25:21 - INFO - training.fm_trainer - Step 340/210000 (0.16%): loss=6.3862, lr=6.00e-06, step_time=1829.8ms, ETA 4d 11h
+12/02/2025 15:25:39 - INFO - training.fm_trainer - Step 350/210000 (0.17%): loss=12.1894, lr=6.00e-06, step_time=1878.3ms, ETA 4d 11h
+12/02/2025 15:25:58 - INFO - training.fm_trainer - Step 360/210000 (0.17%): loss=7.1166, lr=6.60e-06, step_time=1851.3ms, ETA 4d 11h
+12/02/2025 15:26:16 - INFO - training.fm_trainer - Step 370/210000 (0.18%): loss=11.0106, lr=6.60e-06, step_time=1845.4ms, ETA 4d 11h
+12/02/2025 15:26:35 - INFO - training.fm_trainer - Step 380/210000 (0.18%): loss=10.0923, lr=6.60e-06, step_time=1926.0ms, ETA 4d 12h
+12/02/2025 15:26:54 - INFO - training.fm_trainer - Step 390/210000 (0.19%): loss=4.9611, lr=7.20e-06, step_time=1837.4ms, ETA 4d 11h
+12/02/2025 15:27:12 - INFO - training.fm_trainer - Step 400/210000 (0.19%): loss=10.3963, lr=7.20e-06, step_time=1826.8ms, ETA 4d 11h
+12/02/2025 15:27:31 - INFO - training.fm_trainer - Step 410/210000 (0.20%): loss=10.1435, lr=7.20e-06, step_time=1883.1ms, ETA 4d 11h
+12/02/2025 15:27:49 - INFO - training.fm_trainer - Step 420/210000 (0.20%): loss=8.9663, lr=7.80e-06, step_time=1805.4ms, ETA 4d 11h
+12/02/2025 15:28:07 - INFO - training.fm_trainer - Step 430/210000 (0.20%): loss=5.8966, lr=7.80e-06, step_time=1846.5ms, ETA 4d 11h
+12/02/2025 15:28:26 - INFO - training.fm_trainer - Step 440/210000 (0.21%): loss=5.5739, lr=7.80e-06, step_time=1882.9ms, ETA 4d 11h
+12/02/2025 15:28:44 - INFO - training.fm_trainer - Step 450/210000 (0.21%): loss=13.0344, lr=8.40e-06, step_time=1823.2ms, ETA 4d 11h
+12/02/2025 15:29:03 - INFO - training.fm_trainer - Step 460/210000 (0.22%): loss=3.1720, lr=8.40e-06, step_time=1830.8ms, ETA 4d 11h
+12/02/2025 15:29:21 - INFO - training.fm_trainer - Step 470/210000 (0.22%): loss=9.2309, lr=8.40e-06, step_time=1868.5ms, ETA 4d 11h
+12/02/2025 15:29:40 - INFO - training.fm_trainer - Step 480/210000 (0.23%): loss=4.8486, lr=9.00e-06, grad_norm=12.90, step_time=1870.0ms, ETA 4d 11h
+12/02/2025 15:29:58 - INFO - training.fm_trainer - Step 490/210000 (0.23%): loss=3.6623, lr=9.00e-06, step_time=1803.8ms, ETA 4d 11h
+12/02/2025 15:30:17 - INFO - training.fm_trainer - Step 500/210000 (0.24%): loss=5.1103, lr=9.00e-06, step_time=1842.7ms, ETA 4d 11h
+12/02/2025 15:30:17 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-500
+12/02/2025 15:30:17 - INFO - accelerate.accelerator - Saving FSDP model
+/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/fully_sharded_data_parallel.py:675: FutureWarning: FSDP.state_dict_type() and FSDP.set_state_dict_type() are being deprecated. Please use APIs, get_state_dict() and set_state_dict(), which can support different parallelisms, FSDP1, FSDP2, DDP. API doc: https://pytorch.org/docs/stable/distributed.checkpoint.html#torch.distributed.checkpoint.state_dict.get_state_dict .Tutorial: https://pytorch.org/tutorials/recipes/distributed_checkpoint_recipe.html .
+  warnings.warn(
+/root/miniconda3/lib/python3.13/site-packages/torch/distributed/distributed_c10d.py:860: UserWarning: `_get_pg_default_device` will be deprecated, it only stays for backward-compatiblity reason. If you need to find a device for object collectives, please use `_get_object_coll_device`. If you need to query the device types supported by group, please use `_device_capability(group)`.
+  warnings.warn(
+/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_state_dict_utils.py:722: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  local_shape = tensor.shape
+/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_state_dict_utils.py:739: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.shape,
+/root/miniconda3/lib/python3.13/site-packages/torch/distributed/fsdp/_state_dict_utils.py:741: FutureWarning: Please use DTensor instead and we are deprecating ShardedTensor.
+  tensor.dtype,
+12/02/2025 15:30:18 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-500/pytorch_model_fsdp_0
+12/02/2025 15:30:27 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-500/pytorch_model_fsdp_0
+12/02/2025 15:30:27 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-500
+12/02/2025 15:30:27 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 15:30:30 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-500/optimizer_0
+12/02/2025 15:30:46 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-500/optimizer_0
+12/02/2025 15:30:47 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-500
+12/02/2025 15:30:47 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-500/scheduler.bin
+12/02/2025 15:30:47 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-500/sampler.bin
+12/02/2025 15:30:47 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-500/random_states_0.pkl
+12/02/2025 15:30:47 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-500
+12/02/2025 15:31:05 - INFO - training.fm_trainer - Step 510/210000 (0.24%): loss=7.4563, lr=9.00e-06, step_time=1914.3ms, ETA 4d 11h
+12/02/2025 15:31:24 - INFO - training.fm_trainer - Step 520/210000 (0.25%): loss=2.4360, lr=9.60e-06, step_time=1886.5ms, ETA 4d 12h
+12/02/2025 15:31:43 - INFO - training.fm_trainer - Step 530/210000 (0.25%): loss=4.7966, lr=9.60e-06, step_time=1897.9ms, ETA 4d 12h
+12/02/2025 15:32:01 - INFO - training.fm_trainer - Step 540/210000 (0.26%): loss=12.0471, lr=9.60e-06, step_time=1843.8ms, ETA 4d 12h
+12/02/2025 15:32:20 - INFO - training.fm_trainer - Step 550/210000 (0.26%): loss=8.9468, lr=1.02e-05, step_time=1834.8ms, ETA 4d 12h
+12/02/2025 15:32:39 - INFO - training.fm_trainer - Step 560/210000 (0.27%): loss=11.8262, lr=1.02e-05, step_time=1819.5ms, ETA 4d 11h
+12/02/2025 15:32:57 - INFO - training.fm_trainer - Step 570/210000 (0.27%): loss=9.8633, lr=1.02e-05, step_time=1830.9ms, ETA 4d 11h
+12/02/2025 15:33:15 - INFO - training.fm_trainer - Step 580/210000 (0.28%): loss=9.5620, lr=1.08e-05, step_time=1825.3ms, ETA 4d 11h
+12/02/2025 15:33:34 - INFO - training.fm_trainer - Step 590/210000 (0.28%): loss=8.6409, lr=1.08e-05, step_time=1832.9ms, ETA 4d 11h
+12/02/2025 15:33:53 - INFO - training.fm_trainer - Step 600/210000 (0.29%): loss=6.1520, lr=1.08e-05, step_time=1872.9ms, ETA 4d 11h
+12/02/2025 15:34:11 - INFO - training.fm_trainer - Step 610/210000 (0.29%): loss=4.8588, lr=1.14e-05, step_time=1822.5ms, ETA 4d 11h
+12/02/2025 15:34:30 - INFO - training.fm_trainer - Step 620/210000 (0.30%): loss=7.3571, lr=1.14e-05, step_time=1879.2ms, ETA 4d 11h
+12/02/2025 15:34:48 - INFO - training.fm_trainer - Step 630/210000 (0.30%): loss=6.2881, lr=1.14e-05, step_time=1853.0ms, ETA 4d 11h
+12/02/2025 15:35:07 - INFO - training.fm_trainer - Step 640/210000 (0.30%): loss=5.3872, lr=1.20e-05, grad_norm=8.72, step_time=2272.4ms, ETA 4d 14h
+12/02/2025 15:35:26 - INFO - training.fm_trainer - Step 650/210000 (0.31%): loss=6.1857, lr=1.20e-05, step_time=1841.2ms, ETA 4d 13h
+12/02/2025 15:35:44 - INFO - training.fm_trainer - Step 660/210000 (0.31%): loss=9.6899, lr=1.20e-05, step_time=1833.0ms, ETA 4d 13h
+12/02/2025 15:36:03 - INFO - training.fm_trainer - Step 670/210000 (0.32%): loss=4.5008, lr=1.20e-05, step_time=1826.6ms, ETA 4d 13h
+12/02/2025 15:36:21 - INFO - training.fm_trainer - Step 680/210000 (0.32%): loss=7.2346, lr=1.26e-05, step_time=1837.6ms, ETA 4d 12h
+12/02/2025 15:36:40 - INFO - training.fm_trainer - Step 690/210000 (0.33%): loss=16.4466, lr=1.26e-05, step_time=1843.2ms, ETA 4d 12h
+12/02/2025 15:36:58 - INFO - training.fm_trainer - Step 700/210000 (0.33%): loss=7.1333, lr=1.26e-05, step_time=1821.0ms, ETA 4d 12h
+12/02/2025 15:37:17 - INFO - training.fm_trainer - Step 710/210000 (0.34%): loss=5.4523, lr=1.32e-05, step_time=1869.4ms, ETA 4d 12h
+12/02/2025 15:37:35 - INFO - training.fm_trainer - Step 720/210000 (0.34%): loss=6.0949, lr=1.32e-05, step_time=1831.7ms, ETA 4d 12h
+12/02/2025 15:37:53 - INFO - training.fm_trainer - Step 730/210000 (0.35%): loss=4.7975, lr=1.32e-05, step_time=1851.1ms, ETA 4d 12h
+12/02/2025 15:38:12 - INFO - training.fm_trainer - Step 740/210000 (0.35%): loss=8.5452, lr=1.38e-05, step_time=1936.2ms, ETA 4d 12h
+12/02/2025 15:38:31 - INFO - training.fm_trainer - Step 750/210000 (0.36%): loss=3.5487, lr=1.38e-05, step_time=1827.8ms, ETA 4d 12h
+12/02/2025 15:38:49 - INFO - training.fm_trainer - Step 760/210000 (0.36%): loss=4.0001, lr=1.38e-05, step_time=1871.6ms, ETA 4d 12h
+12/02/2025 15:39:08 - INFO - training.fm_trainer - Step 770/210000 (0.37%): loss=3.3337, lr=1.44e-05, step_time=1820.6ms, ETA 4d 12h
+12/02/2025 15:39:26 - INFO - training.fm_trainer - Step 780/210000 (0.37%): loss=5.0105, lr=1.44e-05, step_time=1836.2ms, ETA 4d 11h
+12/02/2025 15:39:44 - INFO - training.fm_trainer - Step 790/210000 (0.38%): loss=4.6446, lr=1.44e-05, step_time=1844.1ms, ETA 4d 11h
+12/02/2025 15:40:03 - INFO - training.fm_trainer - Step 800/210000 (0.38%): loss=1.5639, lr=1.50e-05, grad_norm=5.22, step_time=1908.4ms, ETA 4d 12h
+12/02/2025 15:40:21 - INFO - training.fm_trainer - Step 810/210000 (0.39%): loss=4.1219, lr=1.50e-05, step_time=1826.7ms, ETA 4d 11h
+12/02/2025 15:40:40 - INFO - training.fm_trainer - Step 820/210000 (0.39%): loss=3.7177, lr=1.50e-05, step_time=1840.5ms, ETA 4d 11h
+12/02/2025 15:40:58 - INFO - training.fm_trainer - Step 830/210000 (0.40%): loss=5.4754, lr=1.50e-05, step_time=1854.8ms, ETA 4d 11h
+12/02/2025 15:41:17 - INFO - training.fm_trainer - Step 840/210000 (0.40%): loss=5.3230, lr=1.56e-05, step_time=1838.2ms, ETA 4d 11h
+12/02/2025 15:41:35 - INFO - training.fm_trainer - Step 850/210000 (0.40%): loss=10.2954, lr=1.56e-05, step_time=1824.9ms, ETA 4d 11h
+12/02/2025 15:41:54 - INFO - training.fm_trainer - Step 860/210000 (0.41%): loss=3.8734, lr=1.56e-05, step_time=1833.2ms, ETA 4d 11h
+12/02/2025 15:42:12 - INFO - training.fm_trainer - Step 870/210000 (0.41%): loss=5.6595, lr=1.62e-05, step_time=1812.6ms, ETA 4d 11h
+12/02/2025 15:42:30 - INFO - training.fm_trainer - Step 880/210000 (0.42%): loss=8.9102, lr=1.62e-05, step_time=1860.8ms, ETA 4d 11h
+12/02/2025 15:42:49 - INFO - training.fm_trainer - Step 890/210000 (0.42%): loss=5.7277, lr=1.62e-05, step_time=1859.9ms, ETA 4d 11h
+12/02/2025 15:43:07 - INFO - training.fm_trainer - Step 900/210000 (0.43%): loss=7.5331, lr=1.68e-05, step_time=1830.9ms, ETA 4d 11h
+12/02/2025 15:43:26 - INFO - training.fm_trainer - Step 910/210000 (0.43%): loss=0.9057, lr=1.68e-05, step_time=1869.3ms, ETA 4d 11h
+12/02/2025 15:43:44 - INFO - training.fm_trainer - Step 920/210000 (0.44%): loss=1.3102, lr=1.68e-05, step_time=1839.4ms, ETA 4d 11h
+12/02/2025 15:44:03 - INFO - training.fm_trainer - Step 930/210000 (0.44%): loss=6.0242, lr=1.74e-05, step_time=1832.5ms, ETA 4d 11h
+12/02/2025 15:44:21 - INFO - training.fm_trainer - Step 940/210000 (0.45%): loss=2.3087, lr=1.74e-05, step_time=1848.8ms, ETA 4d 11h
+12/02/2025 15:44:40 - INFO - training.fm_trainer - Step 950/210000 (0.45%): loss=2.3181, lr=1.74e-05, step_time=2128.7ms, ETA 4d 12h
+12/02/2025 15:44:58 - INFO - training.fm_trainer - Step 960/210000 (0.46%): loss=7.0765, lr=1.80e-05, grad_norm=1.93, step_time=1902.6ms, ETA 4d 13h
+12/02/2025 15:45:17 - INFO - training.fm_trainer - Step 970/210000 (0.46%): loss=2.4890, lr=1.80e-05, step_time=1836.6ms, ETA 4d 12h
+12/02/2025 15:45:35 - INFO - training.fm_trainer - Step 980/210000 (0.47%): loss=2.7507, lr=1.80e-05, step_time=1838.7ms, ETA 4d 12h
+12/02/2025 15:45:53 - INFO - training.fm_trainer - Step 990/210000 (0.47%): loss=2.4779, lr=1.80e-05, step_time=1821.7ms, ETA 4d 12h
+12/02/2025 15:46:12 - INFO - training.fm_trainer - Step 1000/210000 (0.48%): loss=3.5096, lr=1.86e-05, step_time=1837.4ms, ETA 4d 12h
+12/02/2025 15:46:12 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1000
+12/02/2025 15:46:12 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 15:46:13 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/pytorch_model_fsdp_0
+12/02/2025 15:46:21 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/pytorch_model_fsdp_0
+12/02/2025 15:46:21 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-1000
+12/02/2025 15:46:21 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 15:46:24 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/optimizer_0
+12/02/2025 15:46:41 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/optimizer_0
+12/02/2025 15:46:42 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-1000
+12/02/2025 15:46:42 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/scheduler.bin
+12/02/2025 15:46:42 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/sampler.bin
+12/02/2025 15:46:42 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1000/random_states_0.pkl
+12/02/2025 15:46:42 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-1000
+12/02/2025 15:47:01 - INFO - training.fm_trainer - Step 1010/210000 (0.48%): loss=10.0667, lr=1.86e-05, step_time=1817.9ms, ETA 4d 11h
+12/02/2025 15:47:20 - INFO - training.fm_trainer - Step 1020/210000 (0.49%): loss=4.1167, lr=1.86e-05, step_time=2002.7ms, ETA 4d 12h
+12/02/2025 15:47:38 - INFO - training.fm_trainer - Step 1030/210000 (0.49%): loss=6.4931, lr=1.92e-05, step_time=1849.4ms, ETA 4d 12h
+12/02/2025 15:47:57 - INFO - training.fm_trainer - Step 1040/210000 (0.50%): loss=10.4735, lr=1.92e-05, step_time=1824.5ms, ETA 4d 12h
+12/02/2025 15:48:15 - INFO - training.fm_trainer - Step 1050/210000 (0.50%): loss=9.6672, lr=1.92e-05, step_time=1837.8ms, ETA 4d 12h
+12/02/2025 15:48:34 - INFO - training.fm_trainer - Step 1060/210000 (0.50%): loss=6.1255, lr=1.98e-05, step_time=1841.2ms, ETA 4d 11h
+12/02/2025 15:48:52 - INFO - training.fm_trainer - Step 1070/210000 (0.51%): loss=2.1839, lr=1.98e-05, step_time=1847.8ms, ETA 4d 11h
+12/02/2025 15:49:11 - INFO - training.fm_trainer - Step 1080/210000 (0.51%): loss=2.8705, lr=1.98e-05, step_time=1837.1ms, ETA 4d 11h
+12/02/2025 15:49:29 - INFO - training.fm_trainer - Step 1090/210000 (0.52%): loss=13.7295, lr=2.04e-05, step_time=1828.7ms, ETA 4d 11h
+12/02/2025 15:49:48 - INFO - training.fm_trainer - Step 1100/210000 (0.52%): loss=2.6064, lr=2.04e-05, step_time=1836.2ms, ETA 4d 11h
+12/02/2025 15:50:06 - INFO - training.fm_trainer - Step 1110/210000 (0.53%): loss=4.9612, lr=2.04e-05, step_time=1812.9ms, ETA 4d 11h
+12/02/2025 15:50:25 - INFO - training.fm_trainer - Step 1120/210000 (0.53%): loss=7.9740, lr=2.10e-05, grad_norm=13.50, step_time=1904.6ms, ETA 4d 11h
+12/02/2025 15:50:43 - INFO - training.fm_trainer - Step 1130/210000 (0.54%): loss=0.5325, lr=2.10e-05, step_time=1818.7ms, ETA 4d 11h
+12/02/2025 15:51:02 - INFO - training.fm_trainer - Step 1140/210000 (0.54%): loss=2.0550, lr=2.10e-05, step_time=1994.3ms, ETA 4d 12h
+12/02/2025 15:51:20 - INFO - training.fm_trainer - Step 1150/210000 (0.55%): loss=3.4716, lr=2.10e-05, step_time=1819.2ms, ETA 4d 11h
+12/02/2025 15:51:39 - INFO - training.fm_trainer - Step 1160/210000 (0.55%): loss=5.9050, lr=2.16e-05, step_time=1830.1ms, ETA 4d 11h
+12/02/2025 15:51:57 - INFO - training.fm_trainer - Step 1170/210000 (0.56%): loss=3.2060, lr=2.16e-05, step_time=1817.7ms, ETA 4d 11h
+12/02/2025 15:52:16 - INFO - training.fm_trainer - Step 1180/210000 (0.56%): loss=1.6086, lr=2.16e-05, step_time=1939.7ms, ETA 4d 12h
+12/02/2025 15:52:34 - INFO - training.fm_trainer - Step 1190/210000 (0.57%): loss=3.6881, lr=2.22e-05, step_time=1877.4ms, ETA 4d 12h
+12/02/2025 15:52:52 - INFO - training.fm_trainer - Step 1200/210000 (0.57%): loss=8.3455, lr=2.22e-05, step_time=1821.1ms, ETA 4d 11h
+12/02/2025 15:53:11 - INFO - training.fm_trainer - Step 1210/210000 (0.58%): loss=3.0991, lr=2.22e-05, step_time=1854.3ms, ETA 4d 11h
+12/02/2025 15:53:29 - INFO - training.fm_trainer - Step 1220/210000 (0.58%): loss=12.7932, lr=2.28e-05, step_time=1844.0ms, ETA 4d 11h
+12/02/2025 15:53:48 - INFO - training.fm_trainer - Step 1230/210000 (0.59%): loss=1.1685, lr=2.28e-05, step_time=1867.6ms, ETA 4d 11h
+12/02/2025 15:54:06 - INFO - training.fm_trainer - Step 1240/210000 (0.59%): loss=12.8775, lr=2.28e-05, step_time=1829.2ms, ETA 4d 11h
+12/02/2025 15:54:25 - INFO - training.fm_trainer - Step 1250/210000 (0.60%): loss=1.9571, lr=2.34e-05, step_time=1843.7ms, ETA 4d 11h
+12/02/2025 15:54:43 - INFO - training.fm_trainer - Step 1260/210000 (0.60%): loss=12.9192, lr=2.34e-05, step_time=1849.8ms, ETA 4d 11h
+12/02/2025 15:55:02 - INFO - training.fm_trainer - Step 1270/210000 (0.60%): loss=1.6492, lr=2.34e-05, step_time=1847.7ms, ETA 4d 11h
+12/02/2025 15:55:21 - INFO - training.fm_trainer - Step 1280/210000 (0.61%): loss=7.4821, lr=2.40e-05, grad_norm=7.30, step_time=1850.4ms, ETA 4d 11h
+12/02/2025 15:55:40 - INFO - training.fm_trainer - Step 1290/210000 (0.61%): loss=2.9822, lr=2.40e-05, step_time=2221.4ms, ETA 4d 13h
+12/02/2025 15:55:58 - INFO - training.fm_trainer - Step 1300/210000 (0.62%): loss=1.8569, lr=2.40e-05, step_time=1896.7ms, ETA 4d 13h
+12/02/2025 15:56:17 - INFO - training.fm_trainer - Step 1310/210000 (0.62%): loss=1.2958, lr=2.40e-05, step_time=1855.2ms, ETA 4d 13h
+12/02/2025 15:56:36 - INFO - training.fm_trainer - Step 1320/210000 (0.63%): loss=10.3886, lr=2.46e-05, step_time=1854.0ms, ETA 4d 13h
+12/02/2025 15:56:54 - INFO - training.fm_trainer - Step 1330/210000 (0.63%): loss=5.3725, lr=2.46e-05, step_time=1870.6ms, ETA 4d 13h
+12/02/2025 15:57:13 - INFO - training.fm_trainer - Step 1340/210000 (0.64%): loss=12.7813, lr=2.46e-05, step_time=1848.4ms, ETA 4d 12h
+12/02/2025 15:57:31 - INFO - training.fm_trainer - Step 1350/210000 (0.64%): loss=0.8581, lr=2.52e-05, step_time=1854.2ms, ETA 4d 12h
+12/02/2025 15:57:50 - INFO - training.fm_trainer - Step 1360/210000 (0.65%): loss=7.4582, lr=2.52e-05, step_time=1834.5ms, ETA 4d 12h
+12/02/2025 15:58:08 - INFO - training.fm_trainer - Step 1370/210000 (0.65%): loss=12.7083, lr=2.52e-05, step_time=1816.2ms, ETA 4d 12h
+12/02/2025 15:58:27 - INFO - training.fm_trainer - Step 1380/210000 (0.66%): loss=1.3065, lr=2.58e-05, step_time=1808.8ms, ETA 4d 11h
+12/02/2025 15:58:45 - INFO - training.fm_trainer - Step 1390/210000 (0.66%): loss=5.3806, lr=2.58e-05, step_time=1841.4ms, ETA 4d 11h
+12/02/2025 15:59:03 - INFO - training.fm_trainer - Step 1400/210000 (0.67%): loss=10.1148, lr=2.58e-05, step_time=1831.4ms, ETA 4d 11h
+12/02/2025 15:59:22 - INFO - training.fm_trainer - Step 1410/210000 (0.67%): loss=0.6460, lr=2.64e-05, step_time=1859.4ms, ETA 4d 11h
+12/02/2025 15:59:40 - INFO - training.fm_trainer - Step 1420/210000 (0.68%): loss=1.9022, lr=2.64e-05, step_time=1825.6ms, ETA 4d 11h
+12/02/2025 15:59:59 - INFO - training.fm_trainer - Step 1430/210000 (0.68%): loss=2.5225, lr=2.64e-05, step_time=1834.2ms, ETA 4d 11h
+12/02/2025 16:00:17 - INFO - training.fm_trainer - Step 1440/210000 (0.69%): loss=2.3266, lr=2.70e-05, grad_norm=1.07, step_time=1940.7ms, ETA 4d 11h
+12/02/2025 16:00:36 - INFO - training.fm_trainer - Step 1450/210000 (0.69%): loss=1.0755, lr=2.70e-05, step_time=1836.0ms, ETA 4d 11h
+12/02/2025 16:00:54 - INFO - training.fm_trainer - Step 1460/210000 (0.70%): loss=2.7350, lr=2.70e-05, step_time=1811.4ms, ETA 4d 11h
+12/02/2025 16:01:13 - INFO - training.fm_trainer - Step 1470/210000 (0.70%): loss=1.4067, lr=2.70e-05, step_time=1935.7ms, ETA 4d 11h
+12/02/2025 16:01:31 - INFO - training.fm_trainer - Step 1480/210000 (0.70%): loss=12.7802, lr=2.76e-05, step_time=1830.3ms, ETA 4d 11h
+12/02/2025 16:01:50 - INFO - training.fm_trainer - Step 1490/210000 (0.71%): loss=11.9782, lr=2.76e-05, step_time=1823.4ms, ETA 4d 11h
+12/02/2025 16:02:08 - INFO - training.fm_trainer - Step 1500/210000 (0.71%): loss=1.4147, lr=2.76e-05, step_time=1815.1ms, ETA 4d 11h
+12/02/2025 16:02:08 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1500
+12/02/2025 16:02:08 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 16:02:10 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/pytorch_model_fsdp_0
+12/02/2025 16:02:19 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/pytorch_model_fsdp_0
+12/02/2025 16:02:19 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-1500
+12/02/2025 16:02:19 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 16:02:22 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/optimizer_0
+12/02/2025 16:02:38 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/optimizer_0
+12/02/2025 16:02:38 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-1500
+12/02/2025 16:02:38 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/scheduler.bin
+12/02/2025 16:02:38 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/sampler.bin
+12/02/2025 16:02:38 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-1500/random_states_0.pkl
+12/02/2025 16:02:38 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-1500
+12/02/2025 16:02:38 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-500
+12/02/2025 16:02:59 - INFO - training.fm_trainer - Step 1510/210000 (0.72%): loss=11.2572, lr=2.82e-05, step_time=1853.2ms, ETA 4d 11h
+12/02/2025 16:03:18 - INFO - training.fm_trainer - Step 1520/210000 (0.72%): loss=12.3157, lr=2.82e-05, step_time=1901.0ms, ETA 4d 11h
+12/02/2025 16:03:36 - INFO - training.fm_trainer - Step 1530/210000 (0.73%): loss=1.7305, lr=2.82e-05, step_time=1859.1ms, ETA 4d 11h
+12/02/2025 16:03:55 - INFO - training.fm_trainer - Step 1540/210000 (0.73%): loss=2.0818, lr=2.88e-05, step_time=1921.9ms, ETA 4d 11h
+12/02/2025 16:04:15 - INFO - training.fm_trainer - Step 1550/210000 (0.74%): loss=11.9883, lr=2.88e-05, step_time=2351.1ms, ETA 4d 14h
+12/02/2025 16:04:34 - INFO - training.fm_trainer - Step 1560/210000 (0.74%): loss=2.4378, lr=2.88e-05, step_time=1809.9ms, ETA 4d 14h
+12/02/2025 16:04:53 - INFO - training.fm_trainer - Step 1570/210000 (0.75%): loss=8.4329, lr=2.94e-05, step_time=1828.8ms, ETA 4d 13h
+12/02/2025 16:05:12 - INFO - training.fm_trainer - Step 1580/210000 (0.75%): loss=11.8654, lr=2.94e-05, step_time=1893.6ms, ETA 4d 13h
+12/02/2025 16:05:30 - INFO - training.fm_trainer - Step 1590/210000 (0.76%): loss=4.8357, lr=2.94e-05, step_time=1831.7ms, ETA 4d 13h
+12/02/2025 16:05:49 - INFO - training.fm_trainer - Step 1600/210000 (0.76%): loss=4.7083, lr=3.00e-05, grad_norm=0.40, step_time=1987.4ms, ETA 4d 13h
+12/02/2025 16:06:08 - INFO - training.fm_trainer - Step 1610/210000 (0.77%): loss=6.2395, lr=3.00e-05, step_time=1877.0ms, ETA 4d 13h
+12/02/2025 16:06:27 - INFO - training.fm_trainer - Step 1620/210000 (0.77%): loss=1.4371, lr=3.00e-05, step_time=1826.5ms, ETA 4d 13h
+12/02/2025 16:06:45 - INFO - training.fm_trainer - Step 1630/210000 (0.78%): loss=3.9641, lr=3.00e-05, step_time=1827.8ms, ETA 4d 12h
+12/02/2025 16:07:04 - INFO - training.fm_trainer - Step 1640/210000 (0.78%): loss=3.7488, lr=3.06e-05, step_time=1825.1ms, ETA 4d 12h
+12/02/2025 16:07:22 - INFO - training.fm_trainer - Step 1650/210000 (0.79%): loss=12.8423, lr=3.06e-05, step_time=1844.9ms, ETA 4d 12h
+12/02/2025 16:07:41 - INFO - training.fm_trainer - Step 1660/210000 (0.79%): loss=4.9342, lr=3.06e-05, step_time=1846.5ms, ETA 4d 12h
+12/02/2025 16:07:59 - INFO - training.fm_trainer - Step 1670/210000 (0.80%): loss=9.3347, lr=3.12e-05, step_time=1845.8ms, ETA 4d 12h
+12/02/2025 16:08:18 - INFO - training.fm_trainer - Step 1680/210000 (0.80%): loss=3.1492, lr=3.12e-05, step_time=1817.3ms, ETA 4d 11h
+12/02/2025 16:08:36 - INFO - training.fm_trainer - Step 1690/210000 (0.80%): loss=0.8707, lr=3.12e-05, step_time=1829.0ms, ETA 4d 11h
+12/02/2025 16:08:54 - INFO - training.fm_trainer - Step 1700/210000 (0.81%): loss=1.3552, lr=3.18e-05, step_time=1823.8ms, ETA 4d 11h
+12/02/2025 16:09:13 - INFO - training.fm_trainer - Step 1710/210000 (0.81%): loss=2.5081, lr=3.18e-05, step_time=1818.1ms, ETA 4d 11h
+12/02/2025 16:09:31 - INFO - training.fm_trainer - Step 1720/210000 (0.82%): loss=11.5352, lr=3.18e-05, step_time=1825.7ms, ETA 4d 11h
+12/02/2025 16:09:50 - INFO - training.fm_trainer - Step 1730/210000 (0.82%): loss=0.4510, lr=3.24e-05, step_time=1801.4ms, ETA 4d 10h
+12/02/2025 16:10:08 - INFO - training.fm_trainer - Step 1740/210000 (0.83%): loss=9.8985, lr=3.24e-05, step_time=1847.3ms, ETA 4d 10h
+12/02/2025 16:10:27 - INFO - training.fm_trainer - Step 1750/210000 (0.83%): loss=0.8896, lr=3.24e-05, step_time=1826.6ms, ETA 4d 10h
+12/02/2025 16:10:45 - INFO - training.fm_trainer - Step 1760/210000 (0.84%): loss=0.5614, lr=3.30e-05, grad_norm=6.23, step_time=1838.4ms, ETA 4d 10h
+12/02/2025 16:11:04 - INFO - training.fm_trainer - Step 1770/210000 (0.84%): loss=1.7493, lr=3.30e-05, step_time=1905.7ms, ETA 4d 10h
+12/02/2025 16:11:22 - INFO - training.fm_trainer - Step 1780/210000 (0.85%): loss=5.2282, lr=3.30e-05, step_time=1901.8ms, ETA 4d 11h
+12/02/2025 16:11:42 - INFO - training.fm_trainer - Step 1790/210000 (0.85%): loss=11.0822, lr=3.30e-05, step_time=1810.9ms, ETA 4d 11h
+12/02/2025 16:12:00 - INFO - training.fm_trainer - Step 1800/210000 (0.86%): loss=0.9217, lr=3.36e-05, step_time=1843.8ms, ETA 4d 10h
+12/02/2025 16:12:19 - INFO - training.fm_trainer - Step 1810/210000 (0.86%): loss=1.4369, lr=3.36e-05, step_time=1960.7ms, ETA 4d 11h
+12/02/2025 16:12:38 - INFO - training.fm_trainer - Step 1820/210000 (0.87%): loss=4.8690, lr=3.36e-05, step_time=1963.3ms, ETA 4d 12h
+12/02/2025 16:12:56 - INFO - training.fm_trainer - Step 1830/210000 (0.87%): loss=1.5950, lr=3.42e-05, step_time=1855.7ms, ETA 4d 12h
+12/02/2025 16:13:15 - INFO - training.fm_trainer - Step 1840/210000 (0.88%): loss=5.6791, lr=3.42e-05, step_time=1866.0ms, ETA 4d 12h
+12/02/2025 16:13:33 - INFO - training.fm_trainer - Step 1850/210000 (0.88%): loss=2.3738, lr=3.42e-05, step_time=1825.7ms, ETA 4d 11h
+12/02/2025 16:13:52 - INFO - training.fm_trainer - Step 1860/210000 (0.89%): loss=1.4597, lr=3.48e-05, step_time=1828.9ms, ETA 4d 11h
+12/02/2025 16:14:10 - INFO - training.fm_trainer - Step 1870/210000 (0.89%): loss=5.3366, lr=3.48e-05, step_time=1829.1ms, ETA 4d 11h
+12/02/2025 16:14:29 - INFO - training.fm_trainer - Step 1880/210000 (0.90%): loss=1.0625, lr=3.48e-05, step_time=1824.7ms, ETA 4d 11h
+12/02/2025 16:14:47 - INFO - training.fm_trainer - Step 1890/210000 (0.90%): loss=6.1629, lr=3.54e-05, step_time=1846.0ms, ETA 4d 11h
+12/02/2025 16:15:06 - INFO - training.fm_trainer - Step 1900/210000 (0.90%): loss=6.4938, lr=3.54e-05, step_time=1874.4ms, ETA 4d 11h
+12/02/2025 16:15:24 - INFO - training.fm_trainer - Step 1910/210000 (0.91%): loss=2.0244, lr=3.54e-05, step_time=1840.3ms, ETA 4d 11h
+12/02/2025 16:15:43 - INFO - training.fm_trainer - Step 1920/210000 (0.91%): loss=1.7861, lr=3.60e-05, grad_norm=2.42, step_time=1863.5ms, ETA 4d 11h
+12/02/2025 16:16:01 - INFO - training.fm_trainer - Step 1930/210000 (0.92%): loss=3.6746, lr=3.60e-05, step_time=1804.8ms, ETA 4d 10h
+12/02/2025 16:16:20 - INFO - training.fm_trainer - Step 1940/210000 (0.92%): loss=5.8286, lr=3.60e-05, step_time=1812.2ms, ETA 4d 10h
+12/02/2025 16:16:38 - INFO - training.fm_trainer - Step 1950/210000 (0.93%): loss=1.2895, lr=3.60e-05, step_time=1916.2ms, ETA 4d 11h
+12/02/2025 16:16:57 - INFO - training.fm_trainer - Step 1960/210000 (0.93%): loss=8.9664, lr=3.66e-05, step_time=1824.8ms, ETA 4d 10h
+12/02/2025 16:17:15 - INFO - training.fm_trainer - Step 1970/210000 (0.94%): loss=3.1642, lr=3.66e-05, step_time=1821.4ms, ETA 4d 10h
+12/02/2025 16:17:33 - INFO - training.fm_trainer - Step 1980/210000 (0.94%): loss=0.4518, lr=3.66e-05, step_time=1829.7ms, ETA 4d 10h
+12/02/2025 16:17:52 - INFO - training.fm_trainer - Step 1990/210000 (0.95%): loss=6.4134, lr=3.72e-05, step_time=1815.0ms, ETA 4d 10h
+12/02/2025 16:18:10 - INFO - training.fm_trainer - Step 2000/210000 (0.95%): loss=0.9178, lr=3.72e-05, step_time=1822.5ms, ETA 4d 10h
+12/02/2025 16:18:10 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-2000
+12/02/2025 16:18:10 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 16:18:11 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/pytorch_model_fsdp_0
+12/02/2025 16:18:20 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/pytorch_model_fsdp_0
+12/02/2025 16:18:20 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-2000
+12/02/2025 16:18:20 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 16:18:23 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/optimizer_0
+12/02/2025 16:18:39 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/optimizer_0
+12/02/2025 16:18:39 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-2000
+12/02/2025 16:18:39 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/scheduler.bin
+12/02/2025 16:18:39 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/sampler.bin
+12/02/2025 16:18:39 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2000/random_states_0.pkl
+12/02/2025 16:18:39 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-2000
+12/02/2025 16:18:39 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-1000
+12/02/2025 16:19:00 - INFO - training.fm_trainer - Step 2010/210000 (0.96%): loss=4.4397, lr=3.72e-05, step_time=1864.0ms, ETA 4d 10h
+12/02/2025 16:19:19 - INFO - training.fm_trainer - Step 2020/210000 (0.96%): loss=1.3061, lr=3.78e-05, step_time=1857.9ms, ETA 4d 10h
+12/02/2025 16:19:37 - INFO - training.fm_trainer - Step 2030/210000 (0.97%): loss=1.0355, lr=3.78e-05, step_time=1853.2ms, ETA 4d 10h
+12/02/2025 16:19:56 - INFO - training.fm_trainer - Step 2040/210000 (0.97%): loss=1.3312, lr=3.78e-05, step_time=1826.4ms, ETA 4d 10h
+12/02/2025 16:20:14 - INFO - training.fm_trainer - Step 2050/210000 (0.98%): loss=12.4970, lr=3.84e-05, step_time=1855.9ms, ETA 4d 10h
+12/02/2025 16:20:32 - INFO - training.fm_trainer - Step 2060/210000 (0.98%): loss=0.4906, lr=3.84e-05, step_time=1897.1ms, ETA 4d 10h
+12/02/2025 16:20:51 - INFO - training.fm_trainer - Step 2070/210000 (0.99%): loss=2.8139, lr=3.84e-05, step_time=1840.8ms, ETA 4d 10h
+12/02/2025 16:21:09 - INFO - training.fm_trainer - Step 2080/210000 (0.99%): loss=1.2170, lr=3.90e-05, grad_norm=0.52, step_time=1843.8ms, ETA 4d 10h
+12/02/2025 16:21:28 - INFO - training.fm_trainer - Step 2090/210000 (1.00%): loss=17.6539, lr=3.90e-05, step_time=1811.2ms, ETA 4d 10h
+12/02/2025 16:21:47 - INFO - training.fm_trainer - Step 2100/210000 (1.00%): loss=1.5180, lr=3.90e-05, step_time=1845.8ms, ETA 4d 10h
+12/02/2025 16:22:05 - INFO - training.fm_trainer - Step 2110/210000 (1.00%): loss=1.3071, lr=3.90e-05, step_time=1821.3ms, ETA 4d 10h
+12/02/2025 16:22:23 - INFO - training.fm_trainer - Step 2120/210000 (1.01%): loss=4.5420, lr=3.96e-05, step_time=1828.0ms, ETA 4d 10h
+12/02/2025 16:22:42 - INFO - training.fm_trainer - Step 2130/210000 (1.01%): loss=3.8700, lr=3.96e-05, step_time=1870.8ms, ETA 4d 10h
+12/02/2025 16:23:01 - INFO - training.fm_trainer - Step 2140/210000 (1.02%): loss=1.3610, lr=3.96e-05, step_time=1910.5ms, ETA 4d 10h
+12/02/2025 16:23:19 - INFO - training.fm_trainer - Step 2150/210000 (1.02%): loss=5.0681, lr=4.02e-05, step_time=1878.7ms, ETA 4d 11h
+12/02/2025 16:23:37 - INFO - training.fm_trainer - Step 2160/210000 (1.03%): loss=2.1580, lr=4.02e-05, step_time=1824.9ms, ETA 4d 10h
+12/02/2025 16:23:56 - INFO - training.fm_trainer - Step 2170/210000 (1.03%): loss=0.4855, lr=4.02e-05, step_time=1818.1ms, ETA 4d 10h
+12/02/2025 16:24:14 - INFO - training.fm_trainer - Step 2180/210000 (1.04%): loss=0.8311, lr=4.08e-05, step_time=1836.0ms, ETA 4d 10h
+12/02/2025 16:24:32 - INFO - training.fm_trainer - Step 2190/210000 (1.04%): loss=1.1953, lr=4.08e-05, step_time=1853.1ms, ETA 4d 10h
+12/02/2025 16:24:51 - INFO - training.fm_trainer - Step 2200/210000 (1.05%): loss=1.2460, lr=4.08e-05, step_time=1812.2ms, ETA 4d 10h
+12/02/2025 16:25:09 - INFO - training.fm_trainer - Step 2210/210000 (1.05%): loss=8.5383, lr=4.14e-05, step_time=1822.3ms, ETA 4d 10h
+12/02/2025 16:25:27 - INFO - training.fm_trainer - Step 2220/210000 (1.06%): loss=1.5204, lr=4.14e-05, step_time=1824.2ms, ETA 4d 10h
+12/02/2025 16:25:46 - INFO - training.fm_trainer - Step 2230/210000 (1.06%): loss=4.7904, lr=4.14e-05, step_time=1881.0ms, ETA 4d 10h
+12/02/2025 16:26:04 - INFO - training.fm_trainer - Step 2240/210000 (1.07%): loss=0.8642, lr=4.20e-05, grad_norm=0.12, step_time=1866.5ms, ETA 4d 10h
+12/02/2025 16:26:23 - INFO - training.fm_trainer - Step 2250/210000 (1.07%): loss=1.5801, lr=4.20e-05, step_time=1824.4ms, ETA 4d 10h
+12/02/2025 16:26:41 - INFO - training.fm_trainer - Step 2260/210000 (1.08%): loss=0.8986, lr=4.20e-05, step_time=1839.7ms, ETA 4d 10h
+12/02/2025 16:27:00 - INFO - training.fm_trainer - Step 2270/210000 (1.08%): loss=4.8287, lr=4.20e-05, step_time=1820.0ms, ETA 4d 10h
+12/02/2025 16:27:18 - INFO - training.fm_trainer - Step 2280/210000 (1.09%): loss=0.4362, lr=4.26e-05, step_time=1860.8ms, ETA 4d 10h
+12/02/2025 16:27:36 - INFO - training.fm_trainer - Step 2290/210000 (1.09%): loss=1.1743, lr=4.26e-05, step_time=1848.3ms, ETA 4d 10h
+12/02/2025 16:27:55 - INFO - training.fm_trainer - Step 2300/210000 (1.10%): loss=9.3799, lr=4.26e-05, step_time=1845.8ms, ETA 4d 10h
+12/02/2025 16:28:13 - INFO - training.fm_trainer - Step 2310/210000 (1.10%): loss=10.3798, lr=4.32e-05, step_time=1841.6ms, ETA 4d 10h
+12/02/2025 16:28:32 - INFO - training.fm_trainer - Step 2320/210000 (1.10%): loss=1.0573, lr=4.32e-05, step_time=1859.9ms, ETA 4d 10h
+12/02/2025 16:28:50 - INFO - training.fm_trainer - Step 2330/210000 (1.11%): loss=1.2290, lr=4.32e-05, step_time=1824.6ms, ETA 4d 10h
+12/02/2025 16:29:09 - INFO - training.fm_trainer - Step 2340/210000 (1.11%): loss=1.4324, lr=4.38e-05, step_time=1823.1ms, ETA 4d 10h
+12/02/2025 16:29:27 - INFO - training.fm_trainer - Step 2350/210000 (1.12%): loss=1.8953, lr=4.38e-05, step_time=1840.4ms, ETA 4d 10h
+12/02/2025 16:29:46 - INFO - training.fm_trainer - Step 2360/210000 (1.12%): loss=5.0237, lr=4.38e-05, step_time=1829.9ms, ETA 4d 10h
+12/02/2025 16:30:04 - INFO - training.fm_trainer - Step 2370/210000 (1.13%): loss=1.3799, lr=4.44e-05, step_time=1818.1ms, ETA 4d 9h
+12/02/2025 16:30:23 - INFO - training.fm_trainer - Step 2380/210000 (1.13%): loss=5.4311, lr=4.44e-05, step_time=1871.7ms, ETA 4d 10h
+12/02/2025 16:30:41 - INFO - training.fm_trainer - Step 2390/210000 (1.14%): loss=1.8452, lr=4.44e-05, step_time=1866.9ms, ETA 4d 10h
+12/02/2025 16:31:00 - INFO - training.fm_trainer - Step 2400/210000 (1.14%): loss=9.2128, lr=4.50e-05, grad_norm=0.91, step_time=1889.3ms, ETA 4d 10h
+12/02/2025 16:31:18 - INFO - training.fm_trainer - Step 2410/210000 (1.15%): loss=1.6311, lr=4.50e-05, step_time=1827.2ms, ETA 4d 10h
+12/02/2025 16:31:37 - INFO - training.fm_trainer - Step 2420/210000 (1.15%): loss=2.7206, lr=4.50e-05, step_time=1835.2ms, ETA 4d 10h
+12/02/2025 16:31:55 - INFO - training.fm_trainer - Step 2430/210000 (1.16%): loss=1.0988, lr=4.50e-05, step_time=1849.3ms, ETA 4d 10h
+12/02/2025 16:32:14 - INFO - training.fm_trainer - Step 2440/210000 (1.16%): loss=1.5401, lr=4.56e-05, step_time=1850.6ms, ETA 4d 10h
+12/02/2025 16:32:32 - INFO - training.fm_trainer - Step 2450/210000 (1.17%): loss=1.1845, lr=4.56e-05, step_time=1847.7ms, ETA 4d 10h
+12/02/2025 16:32:51 - INFO - training.fm_trainer - Step 2460/210000 (1.17%): loss=3.2583, lr=4.56e-05, step_time=1854.1ms, ETA 4d 10h
+12/02/2025 16:33:09 - INFO - training.fm_trainer - Step 2470/210000 (1.18%): loss=9.3863, lr=4.62e-05, step_time=1850.4ms, ETA 4d 10h
+12/02/2025 16:33:28 - INFO - training.fm_trainer - Step 2480/210000 (1.18%): loss=3.9938, lr=4.62e-05, step_time=1839.5ms, ETA 4d 10h
+12/02/2025 16:33:47 - INFO - training.fm_trainer - Step 2490/210000 (1.19%): loss=1.0720, lr=4.62e-05, step_time=1804.7ms, ETA 4d 10h
+12/02/2025 16:34:05 - INFO - training.fm_trainer - Step 2500/210000 (1.19%): loss=7.0898, lr=4.68e-05, step_time=1809.8ms, ETA 4d 10h
+12/02/2025 16:34:05 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-2500
+12/02/2025 16:34:05 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 16:34:06 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/pytorch_model_fsdp_0
+12/02/2025 16:34:19 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/pytorch_model_fsdp_0
+12/02/2025 16:34:19 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-2500
+12/02/2025 16:34:19 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 16:34:22 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/optimizer_0
+12/02/2025 16:34:43 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/optimizer_0
+12/02/2025 16:34:43 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-2500
+12/02/2025 16:34:43 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/scheduler.bin
+12/02/2025 16:34:43 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/sampler.bin
+12/02/2025 16:34:43 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-2500/random_states_0.pkl
+12/02/2025 16:34:43 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-2500
+12/02/2025 16:34:43 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-1500
+12/02/2025 16:35:05 - INFO - training.fm_trainer - Step 2510/210000 (1.20%): loss=1.8243, lr=4.68e-05, step_time=1841.8ms, ETA 4d 10h
+12/02/2025 16:35:24 - INFO - training.fm_trainer - Step 2520/210000 (1.20%): loss=0.5378, lr=4.68e-05, step_time=2067.1ms, ETA 4d 11h
+12/02/2025 16:35:42 - INFO - training.fm_trainer - Step 2530/210000 (1.20%): loss=0.7135, lr=4.74e-05, step_time=1881.4ms, ETA 4d 11h
+12/02/2025 16:36:01 - INFO - training.fm_trainer - Step 2540/210000 (1.21%): loss=1.1645, lr=4.74e-05, step_time=1896.2ms, ETA 4d 11h
+12/02/2025 16:36:20 - INFO - training.fm_trainer - Step 2550/210000 (1.21%): loss=1.3239, lr=4.74e-05, step_time=1851.1ms, ETA 4d 11h
+12/02/2025 16:36:39 - INFO - training.fm_trainer - Step 2560/210000 (1.22%): loss=4.6200, lr=4.80e-05, grad_norm=0.31, step_time=2012.2ms, ETA 4d 12h
+12/02/2025 16:36:57 - INFO - training.fm_trainer - Step 2570/210000 (1.22%): loss=5.8052, lr=4.80e-05, step_time=1920.3ms, ETA 4d 12h
+12/02/2025 16:37:16 - INFO - training.fm_trainer - Step 2580/210000 (1.23%): loss=8.4240, lr=4.80e-05, step_time=1837.8ms, ETA 4d 12h
+12/02/2025 16:37:35 - INFO - training.fm_trainer - Step 2590/210000 (1.23%): loss=0.9914, lr=4.80e-05, step_time=1821.6ms, ETA 4d 11h
+12/02/2025 16:37:54 - INFO - training.fm_trainer - Step 2600/210000 (1.24%): loss=4.9688, lr=4.86e-05, step_time=1877.6ms, ETA 4d 11h
+12/02/2025 16:38:12 - INFO - training.fm_trainer - Step 2610/210000 (1.24%): loss=2.2048, lr=4.86e-05, step_time=1852.4ms, ETA 4d 11h
+12/02/2025 16:38:31 - INFO - training.fm_trainer - Step 2620/210000 (1.25%): loss=4.1674, lr=4.86e-05, step_time=1884.2ms, ETA 4d 11h
+12/02/2025 16:38:50 - INFO - training.fm_trainer - Step 2630/210000 (1.25%): loss=9.0930, lr=4.92e-05, step_time=1847.8ms, ETA 4d 11h
+12/02/2025 16:39:09 - INFO - training.fm_trainer - Step 2640/210000 (1.26%): loss=2.1131, lr=4.92e-05, step_time=1839.5ms, ETA 4d 11h
+12/02/2025 16:39:28 - INFO - training.fm_trainer - Step 2650/210000 (1.26%): loss=6.4602, lr=4.92e-05, step_time=1956.2ms, ETA 4d 12h
+12/02/2025 16:39:46 - INFO - training.fm_trainer - Step 2660/210000 (1.27%): loss=12.1150, lr=4.98e-05, step_time=1827.5ms, ETA 4d 11h
+12/02/2025 16:40:05 - INFO - training.fm_trainer - Step 2670/210000 (1.27%): loss=6.5684, lr=4.98e-05, step_time=1829.6ms, ETA 4d 11h
+12/02/2025 16:40:23 - INFO - training.fm_trainer - Step 2680/210000 (1.28%): loss=0.5835, lr=4.98e-05, step_time=1836.1ms, ETA 4d 11h
+12/02/2025 16:40:42 - INFO - training.fm_trainer - Step 2690/210000 (1.28%): loss=0.7620, lr=5.04e-05, step_time=1829.9ms, ETA 4d 11h
+12/02/2025 16:41:00 - INFO - training.fm_trainer - Step 2700/210000 (1.29%): loss=12.2289, lr=5.04e-05, step_time=1814.1ms, ETA 4d 10h
+12/02/2025 16:41:19 - INFO - training.fm_trainer - Step 2710/210000 (1.29%): loss=0.4792, lr=5.04e-05, step_time=1823.4ms, ETA 4d 10h
+12/02/2025 16:41:37 - INFO - training.fm_trainer - Step 2720/210000 (1.30%): loss=0.4685, lr=5.10e-05, grad_norm=0.39, step_time=1872.1ms, ETA 4d 10h
+12/02/2025 16:41:56 - INFO - training.fm_trainer - Step 2730/210000 (1.30%): loss=0.4632, lr=5.10e-05, step_time=2039.1ms, ETA 4d 11h
+12/02/2025 16:42:14 - INFO - training.fm_trainer - Step 2740/210000 (1.30%): loss=7.0051, lr=5.10e-05, step_time=1938.1ms, ETA 4d 12h
+12/02/2025 16:42:32 - INFO - training.fm_trainer - Step 2750/210000 (1.31%): loss=0.6719, lr=5.10e-05, step_time=1841.7ms, ETA 4d 11h
+12/02/2025 16:42:51 - INFO - training.fm_trainer - Step 2760/210000 (1.31%): loss=0.8385, lr=5.16e-05, step_time=1824.6ms, ETA 4d 11h
+12/02/2025 16:43:09 - INFO - training.fm_trainer - Step 2770/210000 (1.32%): loss=9.7711, lr=5.16e-05, step_time=1823.8ms, ETA 4d 11h
+12/02/2025 16:43:28 - INFO - training.fm_trainer - Step 2780/210000 (1.32%): loss=1.8184, lr=5.16e-05, step_time=1866.6ms, ETA 4d 11h
+12/02/2025 16:43:46 - INFO - training.fm_trainer - Step 2790/210000 (1.33%): loss=1.8384, lr=5.22e-05, step_time=1842.9ms, ETA 4d 11h
+12/02/2025 16:44:05 - INFO - training.fm_trainer - Step 2800/210000 (1.33%): loss=5.4598, lr=5.22e-05, step_time=1821.4ms, ETA 4d 11h
+12/02/2025 16:44:23 - INFO - training.fm_trainer - Step 2810/210000 (1.34%): loss=1.0549, lr=5.22e-05, step_time=1861.6ms, ETA 4d 11h
+12/02/2025 16:44:42 - INFO - training.fm_trainer - Step 2820/210000 (1.34%): loss=3.2254, lr=5.28e-05, step_time=1856.9ms, ETA 4d 11h
+12/02/2025 16:45:00 - INFO - training.fm_trainer - Step 2830/210000 (1.35%): loss=1.8179, lr=5.28e-05, step_time=1957.8ms, ETA 4d 11h
+12/02/2025 16:45:19 - INFO - training.fm_trainer - Step 2840/210000 (1.35%): loss=2.3260, lr=5.28e-05, step_time=1841.1ms, ETA 4d 11h
+12/02/2025 16:45:38 - INFO - training.fm_trainer - Step 2850/210000 (1.36%): loss=4.9604, lr=5.34e-05, step_time=1914.7ms, ETA 4d 11h
+12/02/2025 16:45:57 - INFO - training.fm_trainer - Step 2860/210000 (1.36%): loss=8.2398, lr=5.34e-05, step_time=1902.0ms, ETA 4d 11h
+12/02/2025 16:46:16 - INFO - training.fm_trainer - Step 2870/210000 (1.37%): loss=1.0311, lr=5.34e-05, step_time=1837.2ms, ETA 4d 11h
+12/02/2025 16:46:34 - INFO - training.fm_trainer - Step 2880/210000 (1.37%): loss=1.9438, lr=5.40e-05, grad_norm=0.13, step_time=1896.8ms, ETA 4d 11h
+12/02/2025 16:46:53 - INFO - training.fm_trainer - Step 2890/210000 (1.38%): loss=4.5412, lr=5.40e-05, step_time=1913.7ms, ETA 4d 12h
+12/02/2025 16:47:12 - INFO - training.fm_trainer - Step 2900/210000 (1.38%): loss=0.9734, lr=5.40e-05, step_time=1849.7ms, ETA 4d 11h
+12/02/2025 16:47:31 - INFO - training.fm_trainer - Step 2910/210000 (1.39%): loss=0.9994, lr=5.40e-05, step_time=1883.1ms, ETA 4d 11h
+12/02/2025 16:47:49 - INFO - training.fm_trainer - Step 2920/210000 (1.39%): loss=6.1428, lr=5.46e-05, step_time=1918.9ms, ETA 4d 12h
+12/02/2025 16:48:08 - INFO - training.fm_trainer - Step 2930/210000 (1.40%): loss=2.6537, lr=5.46e-05, step_time=1861.1ms, ETA 4d 12h
+12/02/2025 16:48:26 - INFO - training.fm_trainer - Step 2940/210000 (1.40%): loss=4.9043, lr=5.46e-05, step_time=1830.4ms, ETA 4d 11h
+12/02/2025 16:48:45 - INFO - training.fm_trainer - Step 2950/210000 (1.40%): loss=10.3013, lr=5.52e-05, step_time=1866.3ms, ETA 4d 11h
+12/02/2025 16:49:04 - INFO - training.fm_trainer - Step 2960/210000 (1.41%): loss=6.8481, lr=5.52e-05, step_time=1876.7ms, ETA 4d 11h
+12/02/2025 16:49:23 - INFO - training.fm_trainer - Step 2970/210000 (1.41%): loss=0.5467, lr=5.52e-05, step_time=1830.6ms, ETA 4d 11h
+12/02/2025 16:49:41 - INFO - training.fm_trainer - Step 2980/210000 (1.42%): loss=0.8190, lr=5.58e-05, step_time=1894.3ms, ETA 4d 11h
+12/02/2025 16:50:00 - INFO - training.fm_trainer - Step 2990/210000 (1.42%): loss=0.6369, lr=5.58e-05, step_time=1865.9ms, ETA 4d 11h
+12/02/2025 16:50:19 - INFO - training.fm_trainer - Step 3000/210000 (1.43%): loss=0.7490, lr=5.58e-05, step_time=1932.9ms, ETA 4d 11h
+12/02/2025 16:50:19 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-3000
+12/02/2025 16:50:19 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 16:50:20 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/pytorch_model_fsdp_0
+12/02/2025 16:50:30 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/pytorch_model_fsdp_0
+12/02/2025 16:50:30 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-3000
+12/02/2025 16:50:30 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 16:50:33 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/optimizer_0
+12/02/2025 16:50:51 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/optimizer_0
+12/02/2025 16:50:51 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-3000
+12/02/2025 16:50:51 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/scheduler.bin
+12/02/2025 16:50:51 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/sampler.bin
+12/02/2025 16:50:51 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3000/random_states_0.pkl
+12/02/2025 16:50:51 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-3000
+12/02/2025 16:50:51 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-2000
+12/02/2025 16:51:13 - INFO - training.fm_trainer - Step 3010/210000 (1.43%): loss=1.1233, lr=5.64e-05, step_time=1853.1ms, ETA 4d 11h
+12/02/2025 16:51:31 - INFO - training.fm_trainer - Step 3020/210000 (1.44%): loss=4.6946, lr=5.64e-05, step_time=1829.1ms, ETA 4d 11h
+12/02/2025 16:51:50 - INFO - training.fm_trainer - Step 3030/210000 (1.44%): loss=4.1348, lr=5.64e-05, step_time=1848.9ms, ETA 4d 11h
+12/02/2025 16:52:09 - INFO - training.fm_trainer - Step 3040/210000 (1.45%): loss=1.0175, lr=5.70e-05, grad_norm=0.07, step_time=1877.1ms, ETA 4d 11h
+12/02/2025 16:52:27 - INFO - training.fm_trainer - Step 3050/210000 (1.45%): loss=5.9225, lr=5.70e-05, step_time=1852.2ms, ETA 4d 11h
+12/02/2025 16:52:46 - INFO - training.fm_trainer - Step 3060/210000 (1.46%): loss=8.7771, lr=5.70e-05, step_time=1866.6ms, ETA 4d 11h
+12/02/2025 16:53:05 - INFO - training.fm_trainer - Step 3070/210000 (1.46%): loss=1.6347, lr=5.70e-05, step_time=1857.8ms, ETA 4d 11h
+12/02/2025 16:53:24 - INFO - training.fm_trainer - Step 3080/210000 (1.47%): loss=0.3705, lr=5.76e-05, step_time=1844.1ms, ETA 4d 11h
+12/02/2025 16:53:43 - INFO - training.fm_trainer - Step 3090/210000 (1.47%): loss=1.8828, lr=5.76e-05, step_time=1823.3ms, ETA 4d 10h
+12/02/2025 16:54:01 - INFO - training.fm_trainer - Step 3100/210000 (1.48%): loss=1.3938, lr=5.76e-05, step_time=1849.6ms, ETA 4d 10h
+12/02/2025 16:54:21 - INFO - training.fm_trainer - Step 3110/210000 (1.48%): loss=8.9144, lr=5.82e-05, step_time=2078.6ms, ETA 4d 12h
+12/02/2025 16:54:39 - INFO - training.fm_trainer - Step 3120/210000 (1.49%): loss=1.2228, lr=5.82e-05, step_time=1850.7ms, ETA 4d 11h
+12/02/2025 16:54:58 - INFO - training.fm_trainer - Step 3130/210000 (1.49%): loss=7.7707, lr=5.82e-05, step_time=1838.9ms, ETA 4d 11h
+12/02/2025 16:55:17 - INFO - training.fm_trainer - Step 3140/210000 (1.50%): loss=3.1813, lr=5.88e-05, step_time=1953.0ms, ETA 4d 12h
+12/02/2025 16:55:36 - INFO - training.fm_trainer - Step 3150/210000 (1.50%): loss=1.5957, lr=5.88e-05, step_time=1873.3ms, ETA 4d 12h
+12/02/2025 16:55:55 - INFO - training.fm_trainer - Step 3160/210000 (1.50%): loss=2.0677, lr=5.88e-05, step_time=1888.1ms, ETA 4d 12h
+12/02/2025 16:56:14 - INFO - training.fm_trainer - Step 3170/210000 (1.51%): loss=2.8570, lr=5.94e-05, step_time=1870.0ms, ETA 4d 12h
+12/02/2025 16:56:32 - INFO - training.fm_trainer - Step 3180/210000 (1.51%): loss=1.3545, lr=5.94e-05, step_time=1832.8ms, ETA 4d 11h
+12/02/2025 16:56:51 - INFO - training.fm_trainer - Step 3190/210000 (1.52%): loss=1.2377, lr=5.94e-05, step_time=1861.0ms, ETA 4d 11h
+12/02/2025 16:57:10 - INFO - training.fm_trainer - Step 3200/210000 (1.52%): loss=9.3889, lr=6.00e-05, grad_norm=0.46, step_time=1862.6ms, ETA 4d 11h
+12/02/2025 16:57:28 - INFO - training.fm_trainer - Step 3210/210000 (1.53%): loss=5.3342, lr=6.00e-05, step_time=1883.3ms, ETA 4d 11h
+12/02/2025 16:57:47 - INFO - training.fm_trainer - Step 3220/210000 (1.53%): loss=0.5765, lr=6.00e-05, step_time=2058.9ms, ETA 4d 12h
+12/02/2025 16:58:06 - INFO - training.fm_trainer - Step 3230/210000 (1.54%): loss=4.8484, lr=6.00e-05, step_time=1914.7ms, ETA 4d 12h
+12/02/2025 16:58:25 - INFO - training.fm_trainer - Step 3240/210000 (1.54%): loss=1.5677, lr=6.06e-05, step_time=1874.4ms, ETA 4d 12h
+12/02/2025 16:58:44 - INFO - training.fm_trainer - Step 3250/210000 (1.55%): loss=1.2097, lr=6.06e-05, step_time=1833.1ms, ETA 4d 12h
+12/02/2025 16:59:03 - INFO - training.fm_trainer - Step 3260/210000 (1.55%): loss=1.8261, lr=6.06e-05, step_time=1834.8ms, ETA 4d 12h
+12/02/2025 16:59:21 - INFO - training.fm_trainer - Step 3270/210000 (1.56%): loss=0.8730, lr=6.12e-05, step_time=1814.0ms, ETA 4d 11h
+12/02/2025 16:59:40 - INFO - training.fm_trainer - Step 3280/210000 (1.56%): loss=5.2465, lr=6.12e-05, step_time=1832.0ms, ETA 4d 11h
+12/02/2025 16:59:59 - INFO - training.fm_trainer - Step 3290/210000 (1.57%): loss=1.1405, lr=6.12e-05, step_time=1848.4ms, ETA 4d 11h
+12/02/2025 17:00:17 - INFO - training.fm_trainer - Step 3300/210000 (1.57%): loss=3.0932, lr=6.18e-05, step_time=1845.0ms, ETA 4d 11h
+12/02/2025 17:00:36 - INFO - training.fm_trainer - Step 3310/210000 (1.58%): loss=0.6130, lr=6.18e-05, step_time=2126.0ms, ETA 4d 12h
+12/02/2025 17:00:55 - INFO - training.fm_trainer - Step 3320/210000 (1.58%): loss=1.0599, lr=6.18e-05, step_time=1833.5ms, ETA 4d 12h
+12/02/2025 17:01:14 - INFO - training.fm_trainer - Step 3330/210000 (1.59%): loss=8.1464, lr=6.24e-05, step_time=1850.0ms, ETA 4d 12h
+12/02/2025 17:01:32 - INFO - training.fm_trainer - Step 3340/210000 (1.59%): loss=0.9451, lr=6.24e-05, step_time=1826.8ms, ETA 4d 11h
+12/02/2025 17:01:52 - INFO - training.fm_trainer - Step 3350/210000 (1.60%): loss=2.0951, lr=6.24e-05, step_time=1856.0ms, ETA 4d 11h
+12/02/2025 17:02:10 - INFO - training.fm_trainer - Step 3360/210000 (1.60%): loss=1.4022, lr=6.30e-05, grad_norm=0.72, step_time=1869.3ms, ETA 4d 11h
+12/02/2025 17:02:29 - INFO - training.fm_trainer - Step 3370/210000 (1.60%): loss=2.4192, lr=6.30e-05, step_time=1844.0ms, ETA 4d 11h
+12/02/2025 17:02:47 - INFO - training.fm_trainer - Step 3380/210000 (1.61%): loss=2.0308, lr=6.30e-05, step_time=1833.0ms, ETA 4d 11h
+12/02/2025 17:03:05 - INFO - training.fm_trainer - Step 3390/210000 (1.61%): loss=3.1713, lr=6.30e-05, step_time=1822.7ms, ETA 4d 10h
+12/02/2025 17:03:24 - INFO - training.fm_trainer - Step 3400/210000 (1.62%): loss=4.2426, lr=6.36e-05, step_time=1833.8ms, ETA 4d 10h
+12/02/2025 17:03:43 - INFO - training.fm_trainer - Step 3410/210000 (1.62%): loss=1.0591, lr=6.36e-05, step_time=1839.6ms, ETA 4d 10h
+12/02/2025 17:04:01 - INFO - training.fm_trainer - Step 3420/210000 (1.63%): loss=5.4101, lr=6.36e-05, step_time=1869.7ms, ETA 4d 10h
+12/02/2025 17:04:20 - INFO - training.fm_trainer - Step 3430/210000 (1.63%): loss=1.7347, lr=6.42e-05, step_time=1871.6ms, ETA 4d 10h
+12/02/2025 17:04:39 - INFO - training.fm_trainer - Step 3440/210000 (1.64%): loss=4.3424, lr=6.42e-05, step_time=1858.4ms, ETA 4d 10h
+12/02/2025 17:04:57 - INFO - training.fm_trainer - Step 3450/210000 (1.64%): loss=2.2180, lr=6.42e-05, step_time=1849.2ms, ETA 4d 10h
+12/02/2025 17:05:16 - INFO - training.fm_trainer - Step 3460/210000 (1.65%): loss=1.2447, lr=6.48e-05, step_time=1863.5ms, ETA 4d 10h
+12/02/2025 17:05:34 - INFO - training.fm_trainer - Step 3470/210000 (1.65%): loss=4.7908, lr=6.48e-05, step_time=1829.1ms, ETA 4d 10h
+12/02/2025 17:05:53 - INFO - training.fm_trainer - Step 3480/210000 (1.66%): loss=2.9653, lr=6.48e-05, step_time=1855.2ms, ETA 4d 10h
+12/02/2025 17:06:11 - INFO - training.fm_trainer - Step 3490/210000 (1.66%): loss=2.5960, lr=6.54e-05, step_time=1866.6ms, ETA 4d 10h
+12/02/2025 17:06:30 - INFO - training.fm_trainer - Step 3500/210000 (1.67%): loss=4.3969, lr=6.54e-05, step_time=1839.1ms, ETA 4d 10h
+12/02/2025 17:06:30 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-3500
+12/02/2025 17:06:30 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 17:06:31 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/pytorch_model_fsdp_0
+12/02/2025 17:06:40 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/pytorch_model_fsdp_0
+12/02/2025 17:06:40 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-3500
+12/02/2025 17:06:40 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 17:06:43 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/optimizer_0
+12/02/2025 17:07:00 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/optimizer_0
+12/02/2025 17:07:00 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-3500
+12/02/2025 17:07:00 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/scheduler.bin
+12/02/2025 17:07:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/sampler.bin
+12/02/2025 17:07:00 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-3500/random_states_0.pkl
+12/02/2025 17:07:00 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-3500
+12/02/2025 17:07:00 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-2500
+12/02/2025 17:07:22 - INFO - training.fm_trainer - Step 3510/210000 (1.67%): loss=2.3626, lr=6.54e-05, step_time=1945.3ms, ETA 4d 10h
+12/02/2025 17:07:40 - INFO - training.fm_trainer - Step 3520/210000 (1.68%): loss=1.6349, lr=6.60e-05, grad_norm=0.10, step_time=1900.6ms, ETA 4d 11h
+12/02/2025 17:07:59 - INFO - training.fm_trainer - Step 3530/210000 (1.68%): loss=1.4558, lr=6.60e-05, step_time=1832.9ms, ETA 4d 10h
+12/02/2025 17:08:18 - INFO - training.fm_trainer - Step 3540/210000 (1.69%): loss=0.9730, lr=6.60e-05, step_time=1868.8ms, ETA 4d 10h
+12/02/2025 17:08:37 - INFO - training.fm_trainer - Step 3550/210000 (1.69%): loss=5.3095, lr=6.60e-05, step_time=1848.8ms, ETA 4d 10h
+12/02/2025 17:08:56 - INFO - training.fm_trainer - Step 3560/210000 (1.70%): loss=8.3553, lr=6.66e-05, step_time=1820.4ms, ETA 4d 10h
+12/02/2025 17:09:14 - INFO - training.fm_trainer - Step 3570/210000 (1.70%): loss=3.6372, lr=6.66e-05, step_time=1849.0ms, ETA 4d 10h
+12/02/2025 17:09:33 - INFO - training.fm_trainer - Step 3580/210000 (1.70%): loss=1.1465, lr=6.66e-05, step_time=1824.9ms, ETA 4d 10h
+12/02/2025 17:09:51 - INFO - training.fm_trainer - Step 3590/210000 (1.71%): loss=2.3776, lr=6.72e-05, step_time=1842.2ms, ETA 4d 10h
+12/02/2025 17:10:10 - INFO - training.fm_trainer - Step 3600/210000 (1.71%): loss=1.6860, lr=6.72e-05, step_time=1865.7ms, ETA 4d 10h
+12/02/2025 17:10:28 - INFO - training.fm_trainer - Step 3610/210000 (1.72%): loss=1.0294, lr=6.72e-05, step_time=1810.0ms, ETA 4d 10h
+12/02/2025 17:10:47 - INFO - training.fm_trainer - Step 3620/210000 (1.72%): loss=1.3776, lr=6.78e-05, step_time=1879.2ms, ETA 4d 10h
+12/02/2025 17:11:06 - INFO - training.fm_trainer - Step 3630/210000 (1.73%): loss=8.6349, lr=6.78e-05, step_time=1862.0ms, ETA 4d 10h
+12/02/2025 17:11:24 - INFO - training.fm_trainer - Step 3640/210000 (1.73%): loss=1.3055, lr=6.78e-05, step_time=1818.1ms, ETA 4d 10h
+12/02/2025 17:11:43 - INFO - training.fm_trainer - Step 3650/210000 (1.74%): loss=0.5398, lr=6.84e-05, step_time=1842.2ms, ETA 4d 10h
+12/02/2025 17:12:02 - INFO - training.fm_trainer - Step 3660/210000 (1.74%): loss=1.3593, lr=6.84e-05, step_time=1881.6ms, ETA 4d 10h
+12/02/2025 17:12:20 - INFO - training.fm_trainer - Step 3670/210000 (1.75%): loss=1.9170, lr=6.84e-05, step_time=1863.8ms, ETA 4d 10h
+12/02/2025 17:12:39 - INFO - training.fm_trainer - Step 3680/210000 (1.75%): loss=4.9101, lr=6.90e-05, grad_norm=0.23, step_time=1866.8ms, ETA 4d 10h
+12/02/2025 17:12:57 - INFO - training.fm_trainer - Step 3690/210000 (1.76%): loss=0.5751, lr=6.90e-05, step_time=1829.1ms, ETA 4d 10h
+12/02/2025 17:13:16 - INFO - training.fm_trainer - Step 3700/210000 (1.76%): loss=5.4760, lr=6.90e-05, step_time=1857.9ms, ETA 4d 10h
+12/02/2025 17:13:34 - INFO - training.fm_trainer - Step 3710/210000 (1.77%): loss=8.6681, lr=6.90e-05, step_time=1857.6ms, ETA 4d 10h
+12/02/2025 17:13:53 - INFO - training.fm_trainer - Step 3720/210000 (1.77%): loss=1.1361, lr=6.96e-05, step_time=1807.1ms, ETA 4d 9h
+12/02/2025 17:14:11 - INFO - training.fm_trainer - Step 3730/210000 (1.78%): loss=10.8089, lr=6.96e-05, step_time=1821.3ms, ETA 4d 9h
+12/02/2025 17:14:30 - INFO - training.fm_trainer - Step 3740/210000 (1.78%): loss=3.5535, lr=6.96e-05, step_time=1852.5ms, ETA 4d 9h
+12/02/2025 17:14:48 - INFO - training.fm_trainer - Step 3750/210000 (1.79%): loss=6.7777, lr=7.02e-05, step_time=1831.6ms, ETA 4d 9h
+12/02/2025 17:15:07 - INFO - training.fm_trainer - Step 3760/210000 (1.79%): loss=2.8310, lr=7.02e-05, step_time=1836.9ms, ETA 4d 9h
+12/02/2025 17:15:25 - INFO - training.fm_trainer - Step 3770/210000 (1.80%): loss=1.8004, lr=7.02e-05, step_time=1857.1ms, ETA 4d 9h
+12/02/2025 17:15:44 - INFO - training.fm_trainer - Step 3780/210000 (1.80%): loss=2.6450, lr=7.08e-05, step_time=1827.4ms, ETA 4d 9h
+12/02/2025 17:16:02 - INFO - training.fm_trainer - Step 3790/210000 (1.80%): loss=0.8483, lr=7.08e-05, step_time=1803.3ms, ETA 4d 9h
+12/02/2025 17:16:20 - INFO - training.fm_trainer - Step 3800/210000 (1.81%): loss=1.2611, lr=7.08e-05, step_time=1860.0ms, ETA 4d 9h
+12/02/2025 17:16:39 - INFO - training.fm_trainer - Step 3810/210000 (1.81%): loss=1.9216, lr=7.14e-05, step_time=1829.0ms, ETA 4d 9h
+12/02/2025 17:16:57 - INFO - training.fm_trainer - Step 3820/210000 (1.82%): loss=3.0071, lr=7.14e-05, step_time=1822.9ms, ETA 4d 9h
+12/02/2025 17:17:16 - INFO - training.fm_trainer - Step 3830/210000 (1.82%): loss=5.3869, lr=7.14e-05, step_time=1820.2ms, ETA 4d 9h
+12/02/2025 17:17:34 - INFO - training.fm_trainer - Step 3840/210000 (1.83%): loss=1.2184, lr=7.20e-05, grad_norm=0.32, step_time=1897.2ms, ETA 4d 9h
+12/02/2025 17:17:53 - INFO - training.fm_trainer - Step 3850/210000 (1.83%): loss=2.5160, lr=7.20e-05, step_time=1824.0ms, ETA 4d 9h
+12/02/2025 17:18:11 - INFO - training.fm_trainer - Step 3860/210000 (1.84%): loss=2.3359, lr=7.20e-05, step_time=1856.0ms, ETA 4d 9h
+12/02/2025 17:18:30 - INFO - training.fm_trainer - Step 3870/210000 (1.84%): loss=5.6863, lr=7.20e-05, step_time=1838.4ms, ETA 4d 9h
+12/02/2025 17:18:48 - INFO - training.fm_trainer - Step 3880/210000 (1.85%): loss=6.3894, lr=7.26e-05, step_time=1849.5ms, ETA 4d 9h
+12/02/2025 17:19:06 - INFO - training.fm_trainer - Step 3890/210000 (1.85%): loss=3.5117, lr=7.26e-05, step_time=1820.8ms, ETA 4d 9h
+12/02/2025 17:19:25 - INFO - training.fm_trainer - Step 3900/210000 (1.86%): loss=5.3572, lr=7.26e-05, step_time=1822.7ms, ETA 4d 9h
+12/02/2025 17:19:43 - INFO - training.fm_trainer - Step 3910/210000 (1.86%): loss=0.9156, lr=7.32e-05, step_time=1800.9ms, ETA 4d 9h
+12/02/2025 17:20:02 - INFO - training.fm_trainer - Step 3920/210000 (1.87%): loss=1.4551, lr=7.32e-05, step_time=1849.6ms, ETA 4d 9h
+12/02/2025 17:20:20 - INFO - training.fm_trainer - Step 3930/210000 (1.87%): loss=1.7295, lr=7.32e-05, step_time=1953.9ms, ETA 4d 9h
+12/02/2025 17:20:39 - INFO - training.fm_trainer - Step 3940/210000 (1.88%): loss=8.6272, lr=7.38e-05, step_time=1894.3ms, ETA 4d 10h
+12/02/2025 17:20:57 - INFO - training.fm_trainer - Step 3950/210000 (1.88%): loss=0.9184, lr=7.38e-05, step_time=1826.6ms, ETA 4d 9h
+12/02/2025 17:21:15 - INFO - training.fm_trainer - Step 3960/210000 (1.89%): loss=2.6980, lr=7.38e-05, step_time=1833.8ms, ETA 4d 9h
+12/02/2025 17:21:34 - INFO - training.fm_trainer - Step 3970/210000 (1.89%): loss=10.5965, lr=7.44e-05, step_time=1943.0ms, ETA 4d 10h
+12/02/2025 17:21:53 - INFO - training.fm_trainer - Step 3980/210000 (1.90%): loss=1.9779, lr=7.44e-05, step_time=1821.5ms, ETA 4d 10h
+12/02/2025 17:22:11 - INFO - training.fm_trainer - Step 3990/210000 (1.90%): loss=2.3661, lr=7.44e-05, step_time=1815.6ms, ETA 4d 9h
+12/02/2025 17:22:30 - INFO - training.fm_trainer - Step 4000/210000 (1.90%): loss=5.1845, lr=7.50e-05, grad_norm=0.09, step_time=1868.3ms, ETA 4d 9h
+12/02/2025 17:22:30 - INFO - accelerate.accelerator - Saving current state to checkpoints/flow_matching_qwen_1.7b/checkpoint-4000
+12/02/2025 17:22:30 - INFO - accelerate.accelerator - Saving FSDP model
+12/02/2025 17:22:31 - INFO - accelerate.utils.fsdp_utils - Saving model to checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/pytorch_model_fsdp_0
+12/02/2025 17:22:40 - INFO - accelerate.utils.fsdp_utils - Model saved to checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/pytorch_model_fsdp_0
+12/02/2025 17:22:40 - INFO - accelerate.accelerator - FSDP Model saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-4000
+12/02/2025 17:22:40 - INFO - accelerate.accelerator - Saving FSDP Optimizer
+12/02/2025 17:22:43 - INFO - accelerate.utils.fsdp_utils - Saving Optimizer state to checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/optimizer_0
+12/02/2025 17:23:00 - INFO - accelerate.utils.fsdp_utils - Optimizer state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/optimizer_0
+12/02/2025 17:23:00 - INFO - accelerate.accelerator - FSDP Optimizer saved to output dir checkpoints/flow_matching_qwen_1.7b/checkpoint-4000
+12/02/2025 17:23:00 - INFO - accelerate.checkpointing - Scheduler state saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/scheduler.bin
+12/02/2025 17:23:00 - INFO - accelerate.checkpointing - Sampler state for dataloader 0 saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/sampler.bin
+12/02/2025 17:23:00 - INFO - accelerate.checkpointing - Random states saved in checkpoints/flow_matching_qwen_1.7b/checkpoint-4000/random_states_0.pkl
+12/02/2025 17:23:01 - INFO - training.fm_trainer - Saved checkpoint to checkpoints/flow_matching_qwen_1.7b/checkpoint-4000
+12/02/2025 17:23:01 - INFO - training.fm_trainer - Deleting old checkpoint: checkpoints/flow_matching_qwen_1.7b/checkpoint-3000
+12/02/2025 17:23:22 - INFO - training.fm_trainer - Step 4010/210000 (1.91%): loss=2.7222, lr=7.50e-05, step_time=1849.7ms, ETA 4d 9h
+12/02/2025 17:23:40 - INFO - training.fm_trainer - Step 4020/210000 (1.91%): loss=1.7937, lr=7.50e-05, step_time=1841.7ms, ETA 4d 9h
+12/02/2025 17:23:59 - INFO - training.fm_trainer - Step 4030/210000 (1.92%): loss=5.1308, lr=7.50e-05, step_time=1836.4ms, ETA 4d 9h
+12/02/2025 17:24:17 - INFO - training.fm_trainer - Step 4040/210000 (1.92%): loss=3.2145, lr=7.56e-05, step_time=1871.4ms, ETA 4d 9h
+12/02/2025 17:24:36 - INFO - training.fm_trainer - Step 4050/210000 (1.93%): loss=1.8596, lr=7.56e-05, step_time=1832.5ms, ETA 4d 9h
+12/02/2025 17:24:55 - INFO - training.fm_trainer - Step 4060/210000 (1.93%): loss=1.7418, lr=7.56e-05, step_time=1821.0ms, ETA 4d 9h
+12/02/2025 17:25:13 - INFO - training.fm_trainer - Step 4070/210000 (1.94%): loss=1.4654, lr=7.62e-05, step_time=1826.6ms, ETA 4d 9h
+12/02/2025 17:25:32 - INFO - training.fm_trainer - Step 4080/210000 (1.94%): loss=3.9540, lr=7.62e-05, step_time=1833.8ms, ETA 4d 9h
+Traceback (most recent call last):
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+    main()
+    ~~~~^^
+  File "/workspace/flow-matching-qwen/training/train_h100.py", line 283, in main
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 355, in train
+    self.accelerator.backward(loss)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/accelerate/accelerator.py", line 2852, in backward
+    loss.backward(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/_tensor.py", line 625, in backward
+    torch.autograd.backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, gradient, retain_graph, create_graph, inputs=inputs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/autograd/__init__.py", line 354, in backward
+    _engine_run_backward(
+    ~~~~~~~~~~~~~~~~~~~~^
+        tensors,
+        ^^^^^^^^
+    ...<5 lines>...
+        accumulate_grad=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/root/miniconda3/lib/python3.13/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        t_outputs, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )  # Calls into the C++ engine to run the backward pass
+    ^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 287, in <module>
+[rank0]:     main()
+[rank0]:     ~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/train_h100.py", line 283, in main
+[rank0]:     trainer.train()
+[rank0]:     ~~~~~~~~~~~~~^^
+[rank0]:   File "/workspace/flow-matching-qwen/training/fm_trainer.py", line 355, in train
+[rank0]:     self.accelerator.backward(loss)
+[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/accelerate/accelerator.py", line 2852, in backward
+[rank0]:     loss.backward(**kwargs)
+[rank0]:     ~~~~~~~~~~~~~^^^^^^^^^^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/_tensor.py", line 625, in backward
+[rank0]:     torch.autograd.backward(
+[rank0]:     ~~~~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         self, gradient, retain_graph, create_graph, inputs=inputs
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/autograd/__init__.py", line 354, in backward
+[rank0]:     _engine_run_backward(
+[rank0]:     ~~~~~~~~~~~~~~~~~~~~^
+[rank0]:         tensors,
+[rank0]:         ^^^^^^^^
+[rank0]:     ...<5 lines>...
+[rank0]:         accumulate_grad=True,
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )
+[rank0]:     ^
+[rank0]:   File "/root/miniconda3/lib/python3.13/site-packages/torch/autograd/graph.py", line 841, in _engine_run_backward
+[rank0]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank0]:            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:         t_outputs, *args, **kwargs
+[rank0]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:     )  # Calls into the C++ engine to run the backward pass
+[rank0]:     ^
+[rank0]: KeyboardInterrupt
