@@ -88,6 +88,10 @@ class FlowMatchingTrainingConfig:
     wandb_project: str = "flow-matching-lm"
     run_name: Optional[str] = None
     
+    # Evaluation
+    eval_steps: int = 50              # Evaluate every N steps (0 = disabled)
+    eval_samples: int = 100           # Number of samples for evaluation
+    
     # Distributed
     mixed_precision: str = "bf16"
     fsdp_config: Optional[Dict] = None
@@ -168,6 +172,7 @@ class FlowMatchingTrainer:
         self.tokenizer = tokenizer
         self.train_dataset = train_dataset
         self.eval_dataset = eval_dataset
+        self._eval_dataloader = None  # Cached eval dataloader (avoid reloading datasets)
         self._step_time_ema: Optional[float] = None
         
         # Initialize accelerator for distributed training
@@ -281,6 +286,28 @@ class FlowMatchingTrainer:
             drop_last=True,
         )
     
+    def _get_eval_dataloader(self) -> Optional[DataLoader]:
+        """Create evaluation dataloader (cached to avoid reloading datasets)."""
+        if self.eval_dataset is None:
+            return None
+        
+        # Return cached dataloader if available
+        if self._eval_dataloader is not None:
+            return self._eval_dataloader
+        
+        # Create and cache the dataloader
+        dataloader = DataLoader(
+            self.eval_dataset,
+            batch_size=self.config.per_device_batch_size,
+            shuffle=False,
+            num_workers=self.config.num_workers,
+            pin_memory=True,
+            drop_last=False,
+        )
+        # Prepare once for distributed training
+        self._eval_dataloader = self.accelerator.prepare(dataloader)
+        return self._eval_dataloader
+    
     def train_step(self, batch: Dict[str, torch.Tensor]) -> torch.Tensor:
         """
         Perform a single training step.
@@ -310,6 +337,80 @@ class FlowMatchingTrainer:
         )
         
         return loss
+    
+    @torch.no_grad()
+    def evaluate(self) -> Dict[str, float]:
+        """
+        Run evaluation on the eval dataset.
+        
+        Computes loss and perplexity on a sample of the eval dataset.
+        Uses the same corruption process as training but without gradient updates.
+        
+        Returns:
+            Dictionary with eval metrics (loss, perplexity)
+        """
+        if self.eval_dataset is None:
+            logger.warning("No eval dataset provided, skipping evaluation")
+            return {}
+        
+        eval_dataloader = self._get_eval_dataloader()
+        
+        total_loss = 0.0
+        num_batches = 0
+        max_eval_batches = max(1, self.config.eval_samples // self.config.per_device_batch_size)
+        
+        if self.is_main_process:
+            logger.info(f"Running evaluation on {max_eval_batches} batches...")
+        
+        # Keep model in train mode to compute loss (but no_grad prevents gradient computation)
+        # The model's forward() only computes loss when self.training is True
+        was_training = self.model.training
+        self.model.train()
+        
+        try:
+            for batch_idx, batch in enumerate(eval_dataloader):
+                if batch_idx >= max_eval_batches:
+                    break
+                
+                input_ids = batch["input_ids"]
+                attention_mask = batch.get("attention_mask", None)
+                
+                # Forward pass (model handles t sampling and corruption)
+                logits, loss = self.model(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    training_mode="pretrain",
+                )
+                
+                if loss is not None:
+                    # Gather losses across processes
+                    gathered_loss = self.accelerator.gather(loss.unsqueeze(0))
+                    total_loss += gathered_loss.mean().item()
+                    num_batches += 1
+        finally:
+            # Restore original training state
+            if not was_training:
+                self.model.eval()
+        
+        # Compute average metrics
+        avg_loss = total_loss / max(num_batches, 1)
+        avg_ppl = math.exp(min(avg_loss, 20))  # Cap to avoid overflow
+        
+        metrics = {
+            "eval/loss": avg_loss,
+            "eval/perplexity": avg_ppl,
+        }
+        
+        # Log to wandb and console
+        if self.is_main_process:
+            logger.info(f"Eval Step {self.global_step}: loss={avg_loss:.4f}, ppl={avg_ppl:.2f}")
+            # Force commit to ensure eval metrics appear immediately in wandb
+            wandb.log(metrics, commit=True)
+        
+        # Ensure model is back in training mode for continued training
+        self.model.train()
+        
+        return metrics
     
     def train(self):
         """
@@ -380,6 +481,10 @@ class FlowMatchingTrainer:
                     step_time=step_end_time - step_start_time,
                     grad_norm=grad_norm,
                 )
+            
+            # Evaluation
+            if self.config.eval_steps > 0 and self.global_step % self.config.eval_steps == 0:
+                self.evaluate()
             
             # Checkpointing
             if self.global_step % self.config.save_steps == 0:

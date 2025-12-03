@@ -40,6 +40,10 @@ logging_steps: 10                     # Log every 10 steps
 wandb_project: "flow-matching-lm"
 run_name: "fm-qwen-1.7b-pretrain"
 
+# Evaluation
+eval_steps: 50                        # Evaluate every 50 steps
+eval_samples: 100                     # Number of samples per evaluation
+
 # Distributed Training
 mixed_precision: "bf16"               # Use bfloat16 on H100
 

@@ -219,6 +219,8 @@ def main():
     include_stack_v1 = args.include_stack_v1 or getattr(config, 'include_stack_v1', False)
     include_stack_v2 = args.include_stack_v2 or getattr(config, 'include_stack_v2', False)
     
+    eval_dataset = None
+    
     if args.training_mode in ["pretrain", "midtrain"]:
         # Use CoDA pre-training datasets
         train_dataset = PretrainDataset(
@@ -229,6 +231,18 @@ def main():
             seed=config.seed,
         )
         logger.info(f"Created pre-training dataset (include_stack_v1={include_stack_v1}, include_stack_v2={include_stack_v2})")
+        
+        # Create eval dataset with a different seed (held-out portion of same distribution)
+        eval_steps = getattr(config, 'eval_steps', 0)
+        if eval_steps > 0:
+            eval_dataset = PretrainDataset(
+                tokenizer=tokenizer,
+                max_length=config.sequence_length,
+                include_stack_v1=include_stack_v1,
+                include_stack_v2=include_stack_v2,
+                seed=config.seed + 1000,  # Different seed for eval
+            )
+            logger.info("Created eval dataset (same distribution, different seed)")
     else:
         # SFT mode - use instruction dataset
         from datasets import load_dataset
@@ -270,12 +284,23 @@ def main():
         
         train_dataset = SFTDataset(sft_dataset, tokenizer, config.sequence_length)
         logger.info(f"Created SFT dataset")
+        
+        # Create eval dataset for SFT (test split if available)
+        eval_steps = getattr(config, 'eval_steps', 0)
+        if eval_steps > 0:
+            try:
+                sft_eval = load_dataset(dataset_name, split="test_sft", streaming=True)
+                eval_dataset = SFTDataset(sft_eval, tokenizer, config.sequence_length)
+                logger.info("Created SFT eval dataset from test split")
+            except Exception as e:
+                logger.warning(f"Could not load SFT test split: {e}. Skipping eval.")
     
     # Create trainer
     trainer = FlowMatchingTrainer(
         model=model,
         config=config,
         train_dataset=train_dataset,
+        eval_dataset=eval_dataset,
         tokenizer=tokenizer,
     )
     
